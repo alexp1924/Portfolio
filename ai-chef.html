@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Chef App — Alex Pearson</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #F4F3EE;
+      --ink: #111110;
+      --ink-muted: #888884;
+      --border: #D8D7D1;
+      --serif: 'DM Serif Display', Georgia, serif;
+      --sans: 'Inter', system-ui, sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--ink);
+      font-family: var(--sans);
+      font-size: 15px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 48px;
+      background: var(--bg);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-logo { font-size: 13px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; }
+    .nav-links { display: flex; gap: 36px; list-style: none; }
+    .nav-links a { font-size: 13px; color: var(--ink-muted); transition: color 0.2s; }
+    .nav-links a:hover { color: var(--ink); }
+    .nav-cta { font-size: 13px; font-weight: 500; border: 1px solid var(--ink); padding: 8px 20px; border-radius: 100px; transition: background 0.2s, color 0.2s; }
+    .nav-cta:hover { background: var(--ink); color: var(--bg); }
+
+    .nav-actions { display: flex; align-items: center; gap: 16px; }
+
+    .nav-hamburger {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px;
+    }
+
+    .nav-hamburger span {
+      display: block;
+      width: 20px;
+      height: 1.5px;
+      background: var(--ink);
+      transition: transform 0.25s, opacity 0.25s;
+    }
+
+    .nav-hamburger.is-open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+    .nav-hamburger.is-open span:nth-child(2) { opacity: 0; }
+    .nav-hamburger.is-open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+    .project-header {
+      padding: 148px 48px 64px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .project-header-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 48px;
+    }
+
+    .back-link { font-size: 13px; font-weight: 500; color: var(--ink-muted); transition: color 0.2s; }
+    .back-link:hover { color: var(--ink); }
+    .project-category { font-size: 12px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-muted); }
+
+    .project-title {
+      font-family: var(--serif);
+      font-size: clamp(48px, 7vw, 96px);
+      line-height: 0.95;
+      letter-spacing: -0.02em;
+      margin-bottom: 32px;
+      max-width: 14ch;
+    }
+
+    .project-subtitle {
+      font-size: 18px;
+      font-weight: 300;
+      line-height: 1.7;
+      color: var(--ink-muted);
+      max-width: 600px;
+    }
+
+    .project-hero-img { width: 100%; border-bottom: 1px solid var(--border); }
+    .project-hero-img img { width: 100%; max-height: 600px; object-fit: cover; display: block; }
+
+    .project-details {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .detail-item { padding: 40px 48px; border-right: 1px solid var(--border); }
+    .detail-item:last-child { border-right: none; }
+    .detail-label { display: block; font-size: 11px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-muted); margin-bottom: 8px; }
+    .detail-value { font-size: 15px; font-weight: 400; }
+
+    .project-section {
+      padding: 80px 48px;
+      border-bottom: 1px solid var(--border);
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 64px;
+    }
+
+    .section-label { font-size: 12px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-muted); padding-top: 6px; }
+
+    .section-content h2 {
+      font-family: var(--serif);
+      font-size: clamp(28px, 3vw, 40px);
+      line-height: 1.1;
+      margin-bottom: 24px;
+    }
+
+    .section-content p {
+      font-size: 15px;
+      font-weight: 300;
+      line-height: 1.8;
+      color: var(--ink-muted);
+      margin-bottom: 16px;
+    }
+
+    .section-content p:last-child { margin-bottom: 0; }
+
+    /* FEATURE AREAS */
+    .feature-areas {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 24px;
+    }
+
+    .feature-tag {
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      border: 1px solid var(--border);
+      padding: 8px 16px;
+      border-radius: 100px;
+      color: var(--ink-muted);
+    }
+
+    /* DECISIONS */
+    .decisions-list {
+      display: flex;
+      flex-direction: column;
+      margin-top: 8px;
+    }
+
+    .decision-item {
+      padding: 32px 0;
+      border-bottom: 1px solid var(--border);
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 32px;
+    }
+
+    .decision-item:first-child { border-top: 1px solid var(--border); }
+
+    .decision-name {
+      font-size: 15px;
+      font-weight: 500;
+      line-height: 1.3;
+    }
+
+    .decision-desc {
+      font-size: 14px;
+      font-weight: 300;
+      line-height: 1.7;
+      color: var(--ink-muted);
+    }
+
+    .screens-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin-top: 32px;
+      padding-top: 32px;
+      border-top: 1px solid var(--border);
+    }
+
+    .screen-slot {
+      aspect-ratio: 440 / 956;
+      background: var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .screen-slot img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .project-nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 40px 48px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .project-nav a { font-size: 13px; font-weight: 500; color: var(--ink-muted); transition: color 0.2s; }
+    .project-nav a:hover { color: var(--ink); }
+
+    footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 24px 48px;
+      border-top: 1px solid var(--border);
+    }
+
+    .footer-name { font-size: 13px; font-weight: 500; letter-spacing: 0.06em; }
+    .footer-copy { font-size: 12px; color: var(--ink-muted); }
+    .footer-links { display: flex; gap: 24px; list-style: none; }
+    .footer-links a { font-size: 12px; color: var(--ink-muted); transition: color 0.2s; }
+    .footer-links a:hover { color: var(--ink); }
+
+    @media (max-width: 900px) {
+      nav, .project-header, .project-section, .project-nav, footer { padding-left: 24px; padding-right: 24px; }
+      .project-header { padding-top: 100px; }
+      .project-details { grid-template-columns: 1fr 1fr; }
+      .detail-item:nth-child(2) { border-right: none; }
+      .detail-item:nth-child(3) { border-top: 1px solid var(--border); }
+      .project-section { grid-template-columns: 1fr; gap: 24px; }
+      .decision-item { grid-template-columns: 1fr; gap: 8px; }
+      .screens-grid { grid-template-columns: repeat(2, 1fr); }
+      footer { flex-direction: column; gap: 12px; text-align: center; }
+      .project-header-meta { flex-direction: column; gap: 8px; align-items: flex-start; }
+    }
+
+    @media (max-width: 600px) {
+      nav { padding: 16px 24px; }
+      .nav-hamburger { display: flex; }
+      .nav-links {
+        display: none;
+        position: fixed;
+        top: 53px;
+        left: 0; right: 0;
+        background: var(--bg);
+        border-bottom: 1px solid var(--border);
+        flex-direction: column;
+        gap: 0;
+        z-index: 99;
+        padding: 0;
+        margin: 0;
+      }
+      .nav-links.is-open { display: flex; }
+      .nav-links li { border-bottom: 1px solid var(--border); }
+      .nav-links a { display: block; padding: 16px 24px; font-size: 15px; color: var(--ink); }
+      .project-details { grid-template-columns: 1fr; }
+      .detail-item { border-right: none; }
+      .detail-item:nth-child(3) { border-top: none; }
+      .project-section { padding: 48px 24px; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="nav-logo">Alex Pearson</a>
+    <ul class="nav-links">
+      <li><a href="index.html#work">Work</a></li>
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="index.html#services">Services</a></li>
+    </ul>
+    <div class="nav-actions">
+      <a href="mailto:alexwpearson24@gmail.com" class="nav-cta">Let's talk</a>
+      <button class="nav-hamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <header class="project-header">
+    <div class="project-header-meta">
+      <a href="index.html#work" class="back-link">← Back to work</a>
+      <span class="project-category">Product Design · Concept · 2026</span>
+    </div>
+    <h1 class="project-title">AI Chef App</h1>
+    <p class="project-subtitle">A concept app exploring how AI can simplify cooking and personalise meal planning — helping users decide what to cook based on available ingredients, dietary needs, and personal preferences.</p>
+  </header>
+
+  <div class="project-details">
+    <div class="detail-item">
+      <span class="detail-label">Role</span>
+      <span class="detail-value">UX / UI Designer</span>
+    </div>
+    <div class="detail-item">
+      <span class="detail-label">Type</span>
+      <span class="detail-value">Concept App</span>
+    </div>
+    <div class="detail-item">
+      <span class="detail-label">Year</span>
+      <span class="detail-value">2026</span>
+    </div>
+    <div class="detail-item">
+      <span class="detail-label">Tools</span>
+      <span class="detail-value">Figma, Miro</span>
+    </div>
+  </div>
+
+  <div class="project-section">
+    <span class="section-label">Overview</span>
+    <div class="section-content">
+      <h2>AI that makes cooking simpler, not more complicated.</h2>
+      <p>The AI Chef App is a concept project that explores how artificial intelligence can make cooking easier and more personalised. The idea behind the app is to help users decide what to cook based on the ingredients they already have, their dietary needs, and their preferences.</p>
+      <p>I focused on creating a clean, easy-to-use interface — paying close attention to user flows, layout, and accessibility to make sure the experience feels simple and helpful rather than overwhelming.</p>
+      <p>This project allowed me to combine problem-solving, user research, and visual design to create a practical app idea that uses AI in a meaningful and user-friendly way.</p>
+    </div>
+  </div>
+
+  <div class="project-section">
+    <span class="section-label">Defining the Experience</span>
+    <div class="section-content">
+      <h2>Five core areas to support users throughout their food journey.</h2>
+      <p>To understand where AI could provide the most value, I mapped the product into five core areas. The goal was to support users throughout their food journey rather than simply provide recipes — identifying where AI could meaningfully assist with decision-making, from recognising ingredients to surfacing personalised nutritional insights.</p>
+      <div class="feature-areas">
+        <span class="feature-tag">Onboarding Preferences</span>
+        <span class="feature-tag">Meal Recommendations</span>
+        <span class="feature-tag">Recipe Discovery</span>
+        <span class="feature-tag">Ingredient Scanning</span>
+        <span class="feature-tag">Nutrition Insights</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="project-section">
+    <span class="section-label">Key Design Decisions</span>
+    <div class="section-content">
+      <h2>Three principles that shaped the experience.</h2>
+      <div class="decisions-list">
+        <div class="decision-item">
+          <p class="decision-name">Ingredient-First Discovery</p>
+          <p class="decision-desc">Rather than requiring users to search for recipes, I explored an ingredient scanning feature that allows users to photograph available ingredients and receive relevant meal suggestions. This approach reduces friction and helps minimise food waste.</p>
+        </div>
+        <div class="decision-item">
+          <p class="decision-name">Actionable AI Insights</p>
+          <p class="decision-desc">Instead of overwhelming users with nutritional data, the AI surfaces a single meaningful insight or recommendation — making the experience feel helpful rather than intrusive.</p>
+        </div>
+        <div class="decision-item">
+          <p class="decision-name">Personalised Recommendations</p>
+          <p class="decision-desc">Recipe suggestions are influenced by user preferences, previous meals, and nutritional patterns to create a more tailored experience than traditional recipe browsing.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="project-section">
+    <span class="section-label">App Screens</span>
+    <div class="section-content">
+      <h2>Selected screens from the final design.</h2>
+      <div class="screens-grid">
+        <div class="screen-slot"><img src="AI%20chef/1.png" alt="AI Chef screen 1" /></div>
+        <div class="screen-slot"><img src="AI%20chef/2.png" alt="AI Chef screen 2" /></div>
+        <div class="screen-slot"><img src="AI%20chef/3.png" alt="AI Chef screen 3" /></div>
+        <div class="screen-slot"><img src="AI%20chef/4.png" alt="AI Chef screen 4" /></div>
+        <div class="screen-slot"><img src="AI%20chef/5.png" alt="AI Chef screen 5" /></div>
+        <div class="screen-slot"><img src="AI%20chef/6.png" alt="AI Chef screen 6" /></div>
+        <div class="screen-slot"><img src="AI%20chef/7.png" alt="AI Chef screen 7" /></div>
+        <div class="screen-slot"><img src="AI%20chef/8.png" alt="AI Chef screen 8" /></div>
+        <div class="screen-slot"><img src="AI%20chef/9.png" alt="AI Chef screen 9" /></div>
+        <div class="screen-slot"><img src="AI%20chef/10.png" alt="AI Chef screen 10" /></div>
+        <div class="screen-slot"><img src="AI%20chef/11.png" alt="AI Chef screen 11" /></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="project-nav">
+    <a href="hawk-eye.html">← Previous: Hawk-Eye Innovations</a>
+    <a href="smart-boot.html">Back to first project →</a>
+  </div>
+
+  <footer>
+    <span class="footer-name">Alex Pearson</span>
+    <span class="footer-copy">© 2026 — All rights reserved</span>
+    <ul class="footer-links">
+      <li><a href="index.html#work">Work</a></li>
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="mailto:alexwpearson24@gmail.com">Email</a></li>
+    </ul>
+  </footer>
+
+  <script>
+    const nav = document.querySelector('nav');
+    const hamburger = document.querySelector('.nav-hamburger');
+    const navLinks = document.querySelector('.nav-links');
+
+    function positionDropdown() {
+      navLinks.style.top = nav.getBoundingClientRect().height + 'px';
+    }
+
+    hamburger.addEventListener('click', () => {
+      positionDropdown();
+      hamburger.classList.toggle('is-open');
+      navLinks.classList.toggle('is-open');
+    });
+    navLinks.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        hamburger.classList.remove('is-open');
+        navLinks.classList.remove('is-open');
+      });
+    });
+    document.addEventListener('click', (e) => {
+      if (!nav.contains(e.target)) {
+        hamburger.classList.remove('is-open');
+        navLinks.classList.remove('is-open');
+      }
+    });
+    window.addEventListener('resize', () => {
+      if (navLinks.classList.contains('is-open')) positionDropdown();
+    });
+  </script>
+</body>
+</html>

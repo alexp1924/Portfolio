@@ -188,6 +188,13 @@
 
     .project-images--single { grid-template-columns: 1fr; }
 
+    .project-images--fill { align-items: stretch; }
+    .project-images--fill img {
+      height: 100%;
+      object-fit: cover;
+      object-position: top left;
+    }
+
     .project-images img {
       width: 100%;
       height: auto;
@@ -353,7 +360,7 @@
         </div>
       </div>
 
-      <div class="project-images">
+      <div class="project-images project-images--fill">
         <img src="Hawk-eye/Basketbal%20status/33de462f-9531-49d1-9b9f-86a2bdb1974e_rw_1200.png" alt="Basketball Status Tool screen" />
         <img src="Hawk-eye/Basketbal%20status/45d4832c-0d06-4453-8cc9-5bf06bbc6c1f_rw_1200.png" alt="Basketball Status Tool screen" />
         <img src="Hawk-eye/Basketbal%20status/63cfbfd4-e7cf-4139-9426-629072c7c867_rw_1200.png" alt="Basketball Status Tool screen" />

@@ -60,6 +60,16 @@ button:focus-visible {
 img {
   display: block;
   max-width: 100%;
+  height: auto;
+}
+
+/* <picture> only swaps the file format; the <img> inside takes part in layout */
+picture {
+  display: contents;
+}
+
+picture > source {
+  display: none;
 }
 
 .grey {
@@ -267,7 +277,7 @@ a.card:hover .more {
   display: flex;
 }
 
-.project-media > img {
+.project-media > picture > img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -282,7 +292,7 @@ a.card:hover .more {
   align-items: center;
 }
 
-.project-media.fit > img {
+.project-media.fit > picture > img {
   height: auto;
   max-height: 100%;
   object-fit: contain;
@@ -291,13 +301,13 @@ a.card:hover .more {
 
 /* The basketball exports carry a white strip along the bottom edge; trim it */
 .trim img,
-.project-media.trim > img {
+.project-media.trim > picture > img {
   aspect-ratio: 1200 / 640;
   object-fit: cover;
   object-position: top;
 }
 
-.card.dark .project-media.fit > img,
+.card.dark .project-media.fit > picture > img,
 .card.dark.showcase-wide.fit img {
   outline: 1px solid rgba(255, 255, 255, 0.12);
   outline-offset: -1px;
@@ -320,7 +330,7 @@ a.card:hover .more {
   box-shadow: 0 20px 50px rgba(21, 21, 26, 0.22);
 }
 
-.phones img:nth-child(2) {
+.phones picture:nth-child(2) img {
   margin-top: 8%;
 }
 
@@ -332,7 +342,7 @@ a.card:hover .more {
   min-height: clamp(380px, 46vw, 560px);
 }
 
-.about > img {
+.about > picture > img {
   width: 100%;
   height: 100%;
   min-height: 0;
@@ -404,7 +414,7 @@ a.card:hover .more {
   border: 1px solid rgba(255, 255, 255, 0.12);
 }
 
-.showcase img:nth-child(even) {
+.showcase picture:nth-child(even) img {
   margin-top: 6%;
 }
 
@@ -714,7 +724,7 @@ footer a:hover {
     padding: 0 20px;
   }
 
-  .project-media > img,
+  .project-media > picture > img,
   .project-media .phones {
     height: 300px;
   }
@@ -723,7 +733,7 @@ footer a:hover {
     padding: 0 20px 20px;
   }
 
-  .project-media.fit > img {
+  .project-media.fit > picture > img {
     height: auto;
   }
 
@@ -731,7 +741,7 @@ footer a:hover {
     overflow: hidden;
   }
 
-  .about > img {
+  .about > picture > img {
     aspect-ratio: 4 / 3;
   }
 
@@ -763,7 +773,7 @@ footer a:hover {
     aspect-ratio: auto;
   }
 
-  .showcase img:nth-child(n + 4) {
+  .showcase picture:nth-child(n + 4) {
     display: none;
   }
 

@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cheers — Alex Pearson</title>
+  <meta name="description" content="Case study: an iPhone app for rating drinks out of ten and sharing them with friends, designed and built by Alex Pearson." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="dock">
+    <a class="me" href="index.html"><img src="Profile-avatar.jpg" width="26" height="26" alt="" />Alex Pearson</a>
+    <a href="index.html#work">Work</a>
+    <a href="index.html#about">About</a>
+    <a class="go" href="index.html#about">Get in touch</a>
+  </nav>
+
+  <header class="hero case">
+    <span class="label">06 / 06 · Case study</span>
+    <h1>Cheers</h1>
+    <p>An iPhone app for rating the drinks you try out of ten and sharing them with friends. I designed it and built it myself, from the first research to a working app.</p>
+    <div class="pills">
+      <span class="pill"><span class="grey">Role</span> <b>Designer and builder</b></span>
+      <span class="pill"><span class="grey">Type</span> <b>Side project</b></span>
+      <span class="pill"><span class="grey">Year</span> <b>2026</b></span>
+      <span class="pill"><span class="grey">Tools</span> <b>Figma, Mobbin, React Native, Supabase, Claude Code</b></span>
+    </div>
+  </header>
+
+  <main class="wrap">
+
+    <div class="card dark showcase" style="--tint: var(--cheers);">
+      <picture><source srcset="Cheers/Screens/welcome-1.avif" type="image/avif" /><img src="Cheers/Screens/welcome-1.jpg" width="590" height="1278" alt="Welcome screen: friends' drinks with scores around the line Rate your drinks. Share them with friends." /></picture>
+      <picture><source srcset="Cheers/Screens/home.avif" type="image/avif" /><img src="Cheers/Screens/home.jpg" width="590" height="1278" alt="Home feed with a friend's strawberry spritz, rated 9.0" /></picture>
+      <picture><source srcset="Cheers/Screens/rating.avif" type="image/avif" /><img src="Cheers/Screens/rating.jpg" width="590" height="1278" alt="Rating a drink: name, type and a rating slider out of 10" /></picture>
+      <picture><source srcset="Cheers/Screens/profile.avif" type="image/avif" /><img src="Cheers/Screens/profile.jpg" width="590" height="1278" alt="Profile with a Top rated row of drink photos and the full list below" /></picture>
+      <picture><source srcset="Cheers/Screens/toprated.avif" type="image/avif" /><img src="Cheers/Screens/toprated.jpg" width="590" height="1278" alt="Track, Taste view: the drinks you've rated highest and how you rate" /></picture>
+    </div>
+
+    <!-- AT A GLANCE -->
+    <section class="card glance" aria-label="Project summary">
+      <div>
+        <span class="label">Problem</span>
+        <p>People try new drinks all the time and forget which ones they liked. Most drink apps are built around reviews from strangers, but people trust their friends more.</p>
+      </div>
+      <div>
+        <span class="label">What I did</span>
+        <p>Personas, need statements and ideas, then app structure, wireframes, visual design and building the app.</p>
+      </div>
+      <div>
+        <span class="label">Result</span>
+        <p>A <b>working app</b> where you take a photo of a drink, rate it and see your friends' ratings. Next up is user testing.</p>
+      </div>
+    </section>
+
+    <!-- RESEARCH -->
+    <section class="card read">
+      <div>
+        <span class="label">Research</span>
+        <h2>Who it's for.</h2>
+      </div>
+      <div class="body">
+        <p>The app does two things: rating drinks and sharing them with friends. I created a persona for each.</p>
+        <div class="tiles">
+          <div><b>Jamie, the Explorer</b><span>“If it's on the menu and I haven't tried it, I'm having it.” Jamie loves trying new drinks and takes photos of them, but can't remember the good ones a day later.</span></div>
+          <div><b>Priya, the Friend Who Asks</b><span>“If Jamie gave it a nine, I'm trying it.” Priya tries drinks her friends recommend, trusts them more than online reviews, and only shares with people she knows.</span></div>
+        </div>
+        <p>These personas are based on my own assumptions rather than interviews, so I treated them as something to test later.</p>
+      </div>
+    </section>
+
+    <section class="frames" aria-label="Persona and need statements">
+      <picture><source srcset="Cheers/Research/persona-jamie.avif" type="image/avif" /><img loading="lazy" decoding="async" src="Cheers/Research/persona-jamie.jpg" width="1323" height="962" alt="Persona: Jamie Osei, the Explorer, with behaviours, frustrations, goals and tasks" /></picture>
+      <picture><source srcset="Cheers/Research/needs-jamie.avif" type="image/avif" /><img loading="lazy" decoding="async" src="Cheers/Research/needs-jamie.jpg" width="1323" height="962" alt="Jamie's need statement, broken into four smaller needs" /></picture>
+    </section>
+
+    <!-- DEFINE AND IDEATE -->
+    <section class="card read">
+      <div>
+        <span class="label">Define and ideate</span>
+        <h2>Turning needs into ideas.</h2>
+      </div>
+      <div class="body">
+        <p>I wrote a need statement for each persona and split it into smaller needs. I turned each one into a How Might We question, like “How might we make rating a drink quick enough to do mid-conversation?”. Then I brainstormed ideas for each question and grouped them into themes.</p>
+        <div class="tiles insight">
+          <div><b>Keep it quick</b><span>A photo and a score should be enough. Everything else is optional.</span></div>
+          <div><b>The rating matters most</b><span>A photo on its own isn't much use. The score is what helps you remember if it was good.</span></div>
+          <div><b>Friends over strangers</b><span>People trust a friend's rating more than an average from strangers, so the feed only shows friends.</span></div>
+          <div><b>Taste, not quantity</b><span>The app should help you remember what you liked, not count how much you drink.</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="frames one" aria-label="How Might We questions">
+      <picture><source srcset="Cheers/Research/hmw-0.avif" type="image/avif" /><img loading="lazy" decoding="async" src="Cheers/Research/hmw-0.jpg" width="1240" height="576" alt="Eight How Might We questions, four for Jamie and four for Priya" /></picture>
+    </section>
+
+    <!-- DECISIONS -->
+    <section class="card read">
+      <div>
+        <span class="label">Key decisions</span>
+        <h2>Key design decisions.</h2>
+      </div>
+      <div class="body">
+        <p>Because I was building the app as well as designing it, I also had to think about cost, Apple's rules and what was fair to users.</p>
+      </div>
+    </section>
+
+    <div class="decisions">
+      <section class="card decision" style="--tint: var(--peach);">
+        <div class="decision-text">
+          <span class="label">Decision 01 / 04</span>
+          <h3>Start with the camera</h3>
+          <dl class="why">
+            <div><dt>What I found</dt><dd>Jamie already takes photos of new drinks, but won't bother with anything that takes more than a few taps.</dd></div>
+            <div><dt>What I did</dt><dd>Rating starts with a photo, then you add a name, type and score. I also designed an AI feature that reads the label and fills in the form for you to check. In testing it only saved a couple of fields and added cost and waiting time, so I turned it off for now.</dd></div>
+          </dl>
+        </div>
+        <div class="decision-media"><picture><source srcset="Cheers/Screens/form.avif" type="image/avif" /><img loading="lazy" decoding="async" src="Cheers/Screens/form.jpg" width="590" height="1278" alt="The form filled in from a photo, with a copper banner saying to check it looks right" /></picture></div>
+      </section>
+
+      <section class="card decision" style="--tint: var(--butter);">
+        <div class="decision-text">
+          <span class="label">Decision 02 / 04</span>
+          <h3>One score out of ten for every drink</h3>
+          <dl class="why">
+            <div><dt>What I found</dt><dd>Jamie drinks everything from stouts to spritzes, and already gives drinks a score out of ten with friends. Beer-only apps and five-star ratings didn't fit.</dd></div>
+            <div><dt>What I did</dt><dd>I used a slider out of ten that works the same for every type of drink, with half points so a 7.5 is possible. The score is shown on the photo wherever it appears, so you can see straight away whether it was good.</dd></div>
+          </dl>
+        </div>
+        <div class="decision-media"><picture><source srcset="Cheers/Screens/rating.avif" type="image/avif" /><img loading="lazy" decoding="async" src="Cheers/Screens/rating.jpg" width="590" height="1278" alt="The rating form with a slider at 7.5 out of 10" /></picture></div>
+      </section>
+
+      <section class="card decision" style="--tint: var(--sky);">
+        <div class="decision-text">
+          <span class="label">Decision 03 / 04</span>
+          <h3>Friends only</h3>
+          <dl class="why">
+            <div><dt>What I found</dt><dd>Priya trusts her friends' taste more than reviews, and doesn't want her drinks to be public.</dd></div>
+            <div><dt>What I did</dt><dd>Both people have to accept a friend request, and the feed only shows friends. There's no public feed or algorithm. Instead of likes there's a “Cheers!” button, so Priya can react without having to post anything herself.</dd></div>
+          </dl>
+        </div>
+        <div class="decision-media"><picture><source srcset="Cheers/Screens/cheered.avif" type="image/avif" /><img loading="lazy" decoding="async" src="Cheers/Screens/cheered.jpg" width="590" height="1278" alt="A friend's post with the Cheers! button tapped" /></picture></div>
+      </section>
+
+      <section class="card decision" style="--tint: var(--mint);">
+        <div class="decision-text">
+          <span class="label">Decision 04 / 04</span>
+          <h3>Don't track how much people drink</h3>
+          <dl class="why">
+            <div><dt>What I found</dt><dd>Jamie wants to remember good drinks, not count them. I originally added alcohol units to the Track page, but realised that counts as health data and could encourage drinking more.</dd></div>
+            <div><dt>What I did</dt><dd>I removed the units. Track now only shows what you like, and highlights drink-free days without streaks or badges. I also used the word “rate” throughout instead of “log”.</dd></div>
+          </dl>
+        </div>
+        <div class="decision-media"><picture><source srcset="Cheers/Screens/track.avif" type="image/avif" /><img loading="lazy" decoding="async" src="Cheers/Screens/track.jpg" width="590" height="1278" alt="Track's Moderation view: four days off this week" /></picture></div>
+      </section>
+    </div>
+
+    <!-- STRUCTURE -->
+    <section class="card read">
+      <div>
+        <span class="label">Structure and flows</span>
+        <h2>Making rating easy to reach.</h2>
+      </div>
+      <div class="body">
+        <p>I mapped out every screen. Home, Track and Profile became tabs, and rating a drink got its own + button, because it's what people will do most.</p>
+        <p>I then mapped the two most important flows: signing up for the first time, and adding a friend.</p>
+      </div>
+    </section>
+
+    <section class="frames" aria-label="Structure and user flows">
+      <picture><source srcset="Cheers/Research/floor-plan-map.avif" type="image/avif" /><img loading="lazy" decoding="async" src="Cheers/Research/floor-plan-map.jpg" width="1323" height="962" alt="App structure: Onboarding, Home, Rate a Drink, Track, and Profile and Settings, each with its screens" /></picture>
+      <picture><source srcset="Cheers/Research/second-round-flow.avif" type="image/avif" /><img loading="lazy" decoding="async" src="Cheers/Research/second-round-flow.jpg" width="1323" height="962" alt="Two user flows: first-time onboarding, and adding a friend" /></picture>
+    </section>
+
+    <!-- WIREFRAMES -->
+    <section class="card read">
+      <div>
+        <span class="label">Wireframes</span>
+        <h2>Wireframes first.</h2>
+      </div>
+      <div class="body">
+        <p>I wireframed each part of the app in greyscale before adding any visual design.</p>
+        <ul class="list">
+          <li>Rating a drink takes five screens: camera, photo check, the form, an optional location, and the posted drink.</li>
+          <li>After posting, you go back to the feed with your drink at the top, so you can see it was shared.</li>
+          <li>Sign-up asks one question per screen, and the empty Home screen prompts you to add friends.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="frames one" aria-label="Rating flow wireframes">
+      <picture><source srcset="Cheers/Research/small-batch-frames.avif" type="image/avif" /><img loading="lazy" decoding="async" src="Cheers/Research/small-batch-frames.jpg" width="1240" height="556" alt="Five wireframes for rating a drink: camera, review photo, rating form, add location, posted" /></picture>
+    </section>
+
+    <section class="frames" aria-label="Onboarding and ratings wireframes">
+      <picture><source srcset="Cheers/Research/first-sip-frames.avif" type="image/avif" /><img loading="lazy" decoding="async" src="Cheers/Research/first-sip-frames.jpg" width="1323" height="962" alt="Three onboarding wireframes: welcome, a sign-up step, and Home on first use" /></picture>
+      <picture><source srcset="Cheers/Research/running-tab-frames.avif" type="image/avif" /><img loading="lazy" decoding="async" src="Cheers/Research/running-tab-frames.jpg" width="1323" height="962" alt="Five wireframes: profile, a drink's page, and Track's taste, by-type and moderation views" /></picture>
+    </section>
+
+    <section class="card dark" style="--tint: var(--cheers);">
+      <div class="caption"><span class="label">Welcome screens</span></div>
+      <div class="screens" style="--cols: 3; max-width: 760px; margin: 0 auto;">
+        <picture><source srcset="Cheers/Screens/welcome-1.avif" type="image/avif" /><img loading="lazy" decoding="async" src="Cheers/Screens/welcome-1.jpg" width="590" height="1278" alt="Welcome page one: Rate your drinks. Share them with friends." /></picture>
+        <picture><source srcset="Cheers/Screens/welcome-2.avif" type="image/avif" /><img loading="lazy" decoding="async" src="Cheers/Screens/welcome-2.jpg" width="590" height="1278" alt="Welcome page two: What was that beer we had on holiday? Remember the good ones." /></picture>
+        <picture><source srcset="Cheers/Screens/welcome-3.avif" type="image/avif" /><img loading="lazy" decoding="async" src="Cheers/Screens/welcome-3.jpg" width="590" height="1278" alt="Welcome page three: Snap it, rate it, share it" /></picture>
+      </div>
+    </section>
+
+    <!-- SCREENS -->
+    <section class="card dark" style="--tint: var(--cheers);">
+      <div class="caption"><span class="label">The app</span></div>
+      <div class="screens" style="--cols: 5;">
+        <picture><source srcset="Cheers/Screens/home.avif" type="image/avif" /><img loading="lazy" decoding="async" src="Cheers/Screens/home.jpg" width="590" height="1278" alt="Home feed" /></picture>
+        <picture><source srcset="Cheers/Screens/cheered.avif" type="image/avif" /><img loading="lazy" decoding="async" src="Cheers/Screens/cheered.jpg" width="590" height="1278" alt="A post with Cheers! tapped" /></picture>
+        <picture><source srcset="Cheers/Screens/comments.avif" type="image/avif" /><img loading="lazy" decoding="async" src="Cheers/Screens/comments.jpg" width="590" height="1278" alt="Comments" /></picture>
+        <picture><source srcset="Cheers/Screens/post.avif" type="image/avif" /><img loading="lazy" decoding="async" src="Cheers/Screens/post.jpg" width="590" height="1278" alt="A drink's own page" /></picture>
+        <picture><source srcset="Cheers/Screens/camera.avif" type="image/avif" /><img loading="lazy" decoding="async" src="Cheers/Screens/camera.jpg" width="590" height="1278" alt="Camera" /></picture>
+        <picture><source srcset="Cheers/Screens/rating.avif" type="image/avif" /><img loading="lazy" decoding="async" src="Cheers/Screens/rating.jpg" width="590" height="1278" alt="Rating a drink" /></picture>
+        <picture><source srcset="Cheers/Screens/profile.avif" type="image/avif" /><img loading="lazy" decoding="async" src="Cheers/Screens/profile.jpg" width="590" height="1278" alt="Profile" /></picture>
+        <picture><source srcset="Cheers/Screens/toprated.avif" type="image/avif" /><img loading="lazy" decoding="async" src="Cheers/Screens/toprated.jpg" width="590" height="1278" alt="Track, top rated" /></picture>
+        <picture><source srcset="Cheers/Screens/types.avif" type="image/avif" /><img loading="lazy" decoding="async" src="Cheers/Screens/types.jpg" width="590" height="1278" alt="Track, rating by type and drink types" /></picture>
+        <picture><source srcset="Cheers/Screens/track.avif" type="image/avif" /><img loading="lazy" decoding="async" src="Cheers/Screens/track.jpg" width="590" height="1278" alt="Track, drink-free days" /></picture>
+      </div>
+    </section>
+
+    <!-- REFLECTION -->
+    <section class="card read">
+      <div>
+        <span class="label">Reflection</span>
+        <h2>What I learned and what's next.</h2>
+      </div>
+      <div class="body">
+        <p>Building the app myself, with help from Claude Code, changed how I designed. I had to think beyond the screens, about things like Apple's rules on location search and whether the AI feature was worth what it cost.</p>
+        <p>The personas are still based on assumptions, so the next stage is user testing. I'll start with a few friends using the app, to see if rating is quick enough and whether seeing friends' ratings gets people trying new drinks.</p>
+      </div>
+    </section>
+
+    <!-- NEXT PROJECT -->
+    <a class="card dark next" style="--tint: var(--football); --accent: var(--football-accent); --on-accent: var(--ink);" href="football-analytics.html">
+      <div class="next-text">
+        <span class="label">Back to the start · 01 / 06</span>
+        <h2>Football Analytics App</h2>
+        <span class="more">View work →</span>
+      </div>
+      <div class="project-media"><div class="phones"><picture><source srcset="Football%20Analytics/Screens/home.avif" type="image/avif" /><img loading="lazy" decoding="async" src="Football%20Analytics/Screens/home.jpg" width="590" height="1278" alt="Home screen with live matches and expected goals (xG) with an information button" /></picture><picture><source srcset="Football%20Analytics/Screens/match-lineups.avif" type="image/avif" /><img loading="lazy" decoding="async" src="Football%20Analytics/Screens/match-lineups.jpg" width="590" height="1278" alt="Match lineups with substitutions, goals and cards" /></picture><picture><source srcset="Football%20Analytics/Screens/match-overview.avif" type="image/avif" /><img loading="lazy" decoding="async" src="Football%20Analytics/Screens/match-overview.jpg" width="590" height="1278" alt="Match overview with player of the match and a match momentum chart" /></picture></div></div>
+    </a>
+
+  </main>
+
+  <footer>
+    <a href="index.html#work">← All work</a>
+    <span>Alex Pearson · © 2026</span>
+  </footer>
+
+</body>
+</html>

@@ -35,11 +35,11 @@
   <main class="wrap">
 
     <div class="card dark showcase" style="--tint: var(--football);">
-      <picture><source srcset="Football%20Analytics/1.avif" type="image/avif" /><img src="Football%20Analytics/1.png" width="440" height="956" alt="Home screen with live match statistics" /></picture>
-      <picture><source srcset="Football%20Analytics/5.avif" type="image/avif" /><img src="Football%20Analytics/5.png" width="440" height="956" alt="Match lineups screen" /></picture>
-      <picture><source srcset="Football%20Analytics/4.avif" type="image/avif" /><img src="Football%20Analytics/4.png" width="440" height="956" alt="Match overview with player of the match and match momentum chart" /></picture>
-      <picture><source srcset="Football%20Analytics/2.avif" type="image/avif" /><img src="Football%20Analytics/2.png" width="440" height="956" alt="Matches screen" /></picture>
-      <picture><source srcset="Football%20Analytics/3.avif" type="image/avif" /><img src="Football%20Analytics/3.png" width="440" height="956" alt="Standings screen" /></picture>
+      <picture><source srcset="Football%20Analytics/Screens/home.avif" type="image/avif" /><img src="Football%20Analytics/Screens/home.jpg" width="590" height="1278" alt="Home screen with live matches and expected goals (xG) with an information button" /></picture>
+      <picture><source srcset="Football%20Analytics/Screens/match-lineups.avif" type="image/avif" /><img src="Football%20Analytics/Screens/match-lineups.jpg" width="590" height="1278" alt="Match lineups with substitutions, goals and cards" /></picture>
+      <picture><source srcset="Football%20Analytics/Screens/match-overview.avif" type="image/avif" /><img src="Football%20Analytics/Screens/match-overview.jpg" width="590" height="1278" alt="Match overview with player of the match and a match momentum chart" /></picture>
+      <picture><source srcset="Football%20Analytics/Screens/match-shot-map.avif" type="image/avif" /><img src="Football%20Analytics/Screens/match-shot-map.jpg" width="590" height="1278" alt="Match statistics showing an interactive shot map" /></picture>
+      <picture><source srcset="Football%20Analytics/Screens/league-standings.avif" type="image/avif" /><img src="Football%20Analytics/Screens/league-standings.jpg" width="590" height="1278" alt="Premier League standings table" /></picture>
     </div>
 
     <!-- AT A GLANCE -->
@@ -133,13 +133,25 @@
       <section class="card decision" style="--tint: var(--sky);">
         <div class="decision-text">
           <span class="label">Decision 01 / 03</span>
-          <h3>Simple stats first, advanced metrics explained on demand</h3>
+          <h3>An explanation one tap away from every stat</h3>
           <dl class="why">
-            <div><dt>What I found</dt><dd>Fans struggled with advanced metrics, and both competitors presented numbers without guidance.</dd></div>
-            <div><dt>What I did</dt><dd>Familiar stats such as possession and shots lead each match. xG sits alongside them with an info icon that explains it in plain language, so confident fans aren't slowed down.</dd></div>
+            <div><dt>What I found</dt><dd>The biggest finding from the research: fans didn't understand complex match data. Both competitors showed the numbers without any guidance on how to read them.</dd></div>
+            <div><dt>What I did</dt><dd>I attached an information button to each stat. Tapping it opens a pop-up that explains what the stat shows, what it means, and how to interpret it, so fans can read the data for themselves. Confident fans can ignore the button and aren't slowed down.</dd></div>
           </dl>
         </div>
-        <div class="decision-media"><picture><source srcset="Football%20Analytics/1.avif" type="image/avif" /><img loading="lazy" decoding="async" src="Football%20Analytics/1.png" width="440" height="956" alt="Home screen showing possession, expected goals with an info icon, and shots" /></picture></div>
+        <div class="decision-media"><picture><source srcset="Football%20Analytics/Explanations/xG.avif" type="image/avif" /><img loading="lazy" decoding="async" src="Football%20Analytics/Explanations/xG.jpg" width="590" height="1278" alt="Explanation pop-up for expected goals (xG), with what it measures and example values from low to high chance" /></picture></div>
+      </section>
+
+      <section class="card dark explainers" style="--tint: var(--football);">
+        <div class="caption">
+          <span class="label">The same pattern on every complex stat</span>
+          <p>Each pop-up follows one structure: what the stat is, what it shows, and how to interpret it, then a single “Got it” to close.</p>
+        </div>
+        <div class="screens" style="--cols: 3;">
+          <picture><source srcset="Football%20Analytics/Explanations/xG.avif" type="image/avif" /><img loading="lazy" decoding="async" src="Football%20Analytics/Explanations/xG.jpg" width="590" height="1278" alt="xG explanation: a definition, then example values from 0.05 to 0.80" /></picture>
+          <picture><source srcset="Football%20Analytics/Explanations/shot-map.avif" type="image/avif" /><img loading="lazy" decoding="async" src="Football%20Analytics/Explanations/shot-map.jpg" width="590" height="1278" alt="Shot map explanation: a key for off target, on target and goal, then how to interpret clusters near goal" /></picture>
+          <picture><source srcset="Football%20Analytics/Explanations/momentum.avif" type="image/avif" /><img loading="lazy" decoding="async" src="Football%20Analytics/Explanations/momentum.jpg" width="590" height="1278" alt="Match momentum explanation: what tall bars and goal markers mean, then how to read dominance and open games" /></picture>
+        </div>
       </section>
 
       <section class="card decision" style="--tint: var(--butter);">
@@ -148,10 +160,10 @@
           <h3>Charts that tell the story of a match</h3>
           <dl class="why">
             <div><dt>What I found</dt><dd>Fans found visualisations helpful, and wanted to understand why a team or player performed well, not just the final numbers.</dd></div>
-            <div><dt>What I did</dt><dd>A match momentum chart shows how the game swung over time, with a “What is this?” prompt for anyone unfamiliar with it.</dd></div>
+            <div><dt>What I did</dt><dd>A match momentum chart shows how the game swung over time, so fans can see why the result happened, not just the final score.</dd></div>
           </dl>
         </div>
-        <div class="decision-media"><picture><source srcset="Football%20Analytics/4.avif" type="image/avif" /><img loading="lazy" decoding="async" src="Football%20Analytics/4.png" width="440" height="956" alt="Match overview with player of the match and a momentum chart with a What is this? prompt" /></picture></div>
+        <div class="decision-media"><picture><source srcset="Football%20Analytics/Screens/match-overview.avif" type="image/avif" /><img loading="lazy" decoding="async" src="Football%20Analytics/Screens/match-overview.jpg" width="590" height="1278" alt="Match overview with player of the match and a match momentum chart" /></picture></div>
       </section>
 
       <section class="card decision" style="--tint: var(--mint);">
@@ -163,7 +175,7 @@
             <div><dt>What I did</dt><dd>Each match splits into Overview, Lineups, Statistics and Standings tabs, with grouped content cards and a bottom navigation bar, so fans see one layer of detail at a time.</dd></div>
           </dl>
         </div>
-        <div class="decision-media"><picture><source srcset="Football%20Analytics/5.avif" type="image/avif" /><img loading="lazy" decoding="async" src="Football%20Analytics/5.png" width="440" height="956" alt="Match lineups screen with Overview, Lineups, Statistics and Standings tabs" /></picture></div>
+        <div class="decision-media"><picture><source srcset="Football%20Analytics/Screens/match-lineups.avif" type="image/avif" /><img loading="lazy" decoding="async" src="Football%20Analytics/Screens/match-lineups.jpg" width="590" height="1278" alt="Match lineups with substitutions, goals and cards" /></picture></div>
       </section>
     </div>
 
@@ -202,16 +214,19 @@
     <section class="card dark" style="--tint: var(--football);">
       <div class="caption"><span class="label">Final screens</span></div>
       <div class="screens" style="--cols: 5;">
-        <picture><source srcset="Football%20Analytics/1.avif" type="image/avif" /><img loading="lazy" decoding="async" src="Football%20Analytics/1.png" width="440" height="956" alt="Football Analytics screen 1" /></picture>
-        <picture><source srcset="Football%20Analytics/2.avif" type="image/avif" /><img loading="lazy" decoding="async" src="Football%20Analytics/2.png" width="440" height="956" alt="Football Analytics screen 2" /></picture>
-        <picture><source srcset="Football%20Analytics/3.avif" type="image/avif" /><img loading="lazy" decoding="async" src="Football%20Analytics/3.png" width="440" height="956" alt="Football Analytics screen 3" /></picture>
-        <picture><source srcset="Football%20Analytics/4.avif" type="image/avif" /><img loading="lazy" decoding="async" src="Football%20Analytics/4.png" width="440" height="956" alt="Football Analytics screen 4" /></picture>
-        <picture><source srcset="Football%20Analytics/5.avif" type="image/avif" /><img loading="lazy" decoding="async" src="Football%20Analytics/5.png" width="440" height="956" alt="Football Analytics screen 5" /></picture>
-        <picture><source srcset="Football%20Analytics/6.avif" type="image/avif" /><img loading="lazy" decoding="async" src="Football%20Analytics/6.png" width="440" height="956" alt="Football Analytics screen 6" /></picture>
-        <picture><source srcset="Football%20Analytics/7.avif" type="image/avif" /><img loading="lazy" decoding="async" src="Football%20Analytics/7.png" width="440" height="956" alt="Football Analytics screen 7" /></picture>
-        <picture><source srcset="Football%20Analytics/8.avif" type="image/avif" /><img loading="lazy" decoding="async" src="Football%20Analytics/8.png" width="440" height="956" alt="Football Analytics screen 8" /></picture>
-        <picture><source srcset="Football%20Analytics/9.avif" type="image/avif" /><img loading="lazy" decoding="async" src="Football%20Analytics/9.png" width="440" height="956" alt="Football Analytics screen 9" /></picture>
-        <picture><source srcset="Football%20Analytics/10.avif" type="image/avif" /><img loading="lazy" decoding="async" src="Football%20Analytics/10.png" width="440" height="956" alt="Football Analytics screen 10" /></picture>
+        <picture><source srcset="Football%20Analytics/Screens/home.avif" type="image/avif" /><img loading="lazy" decoding="async" src="Football%20Analytics/Screens/home.jpg" width="590" height="1278" alt="Home" /></picture>
+        <picture><source srcset="Football%20Analytics/Screens/match-overview.avif" type="image/avif" /><img loading="lazy" decoding="async" src="Football%20Analytics/Screens/match-overview.jpg" width="590" height="1278" alt="Match overview" /></picture>
+        <picture><source srcset="Football%20Analytics/Screens/match-lineups.avif" type="image/avif" /><img loading="lazy" decoding="async" src="Football%20Analytics/Screens/match-lineups.jpg" width="590" height="1278" alt="Match lineups" /></picture>
+        <picture><source srcset="Football%20Analytics/Screens/match-shot-map.avif" type="image/avif" /><img loading="lazy" decoding="async" src="Football%20Analytics/Screens/match-shot-map.jpg" width="590" height="1278" alt="Match statistics and shot map" /></picture>
+        <picture><source srcset="Football%20Analytics/Screens/leagues.avif" type="image/avif" /><img loading="lazy" decoding="async" src="Football%20Analytics/Screens/leagues.jpg" width="590" height="1278" alt="Leagues list" /></picture>
+        <picture><source srcset="Football%20Analytics/Screens/league-standings.avif" type="image/avif" /><img loading="lazy" decoding="async" src="Football%20Analytics/Screens/league-standings.jpg" width="590" height="1278" alt="League standings" /></picture>
+        <picture><source srcset="Football%20Analytics/Screens/league-stats.avif" type="image/avif" /><img loading="lazy" decoding="async" src="Football%20Analytics/Screens/league-stats.jpg" width="590" height="1278" alt="League player stats" /></picture>
+        <picture><source srcset="Football%20Analytics/Screens/find-teams.avif" type="image/avif" /><img loading="lazy" decoding="async" src="Football%20Analytics/Screens/find-teams.jpg" width="590" height="1278" alt="Find teams" /></picture>
+        <picture><source srcset="Football%20Analytics/Screens/team-overview.avif" type="image/avif" /><img loading="lazy" decoding="async" src="Football%20Analytics/Screens/team-overview.jpg" width="590" height="1278" alt="Team overview with form guide" /></picture>
+        <picture><source srcset="Football%20Analytics/Screens/team-matches.avif" type="image/avif" /><img loading="lazy" decoding="async" src="Football%20Analytics/Screens/team-matches.jpg" width="590" height="1278" alt="Team matches" /></picture>
+        <picture><source srcset="Football%20Analytics/Screens/team-statistics.avif" type="image/avif" /><img loading="lazy" decoding="async" src="Football%20Analytics/Screens/team-statistics.jpg" width="590" height="1278" alt="Team statistics" /></picture>
+        <picture><source srcset="Football%20Analytics/Screens/team-squad.avif" type="image/avif" /><img loading="lazy" decoding="async" src="Football%20Analytics/Screens/team-squad.jpg" width="590" height="1278" alt="Team squad" /></picture>
+        <picture><source srcset="Football%20Analytics/Screens/notifications.avif" type="image/avif" /><img loading="lazy" decoding="async" src="Football%20Analytics/Screens/notifications.jpg" width="590" height="1278" alt="Notifications" /></picture>
       </div>
     </section>
 

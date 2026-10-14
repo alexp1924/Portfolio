@@ -926,3 +926,14 @@ footer a:hover {
     grid-template-columns: minmax(0, 1fr);
   }
 }
+
+.explainers .caption p {
+  margin-top: 10px;
+  max-width: 60ch;
+  opacity: 0.75;
+}
+
+.explainers .screens {
+  max-width: 900px;
+  margin: 0 auto;
+}

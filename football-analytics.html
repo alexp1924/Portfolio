@@ -21,7 +21,7 @@
   </nav>
 
   <header class="hero case">
-    <span class="label">01 / 06 · Case study</span>
+    <span class="label">01 / 05 · Case study</span>
     <h1>Football Analytics App</h1>
     <p>A mobile-first prototype that helps casual football fans understand advanced metrics like expected goals (xG), through clear visual hierarchy, contextual explanations and intuitive navigation.</p>
     <div class="pills">
@@ -36,17 +36,153 @@
 
     <div class="card dark showcase" style="--tint: var(--football);">
       <picture><source srcset="Football%20Analytics/1.avif" type="image/avif" /><img src="Football%20Analytics/1.png" width="440" height="956" alt="Home screen with live match statistics" /></picture>
-      <picture><source srcset="Football%20Analytics/5.avif" type="image/avif" /><img src="Football%20Analytics/5.png" width="440" height="956" alt="Match overview with player of the match and match momentum chart" /></picture>
-      <picture><source srcset="Football%20Analytics/4.avif" type="image/avif" /><img src="Football%20Analytics/4.png" width="440" height="956" alt="Match lineups screen" /></picture>
+      <picture><source srcset="Football%20Analytics/5.avif" type="image/avif" /><img src="Football%20Analytics/5.png" width="440" height="956" alt="Match lineups screen" /></picture>
+      <picture><source srcset="Football%20Analytics/4.avif" type="image/avif" /><img src="Football%20Analytics/4.png" width="440" height="956" alt="Match overview with player of the match and match momentum chart" /></picture>
       <picture><source srcset="Football%20Analytics/2.avif" type="image/avif" /><img src="Football%20Analytics/2.png" width="440" height="956" alt="Matches screen" /></picture>
       <picture><source srcset="Football%20Analytics/3.avif" type="image/avif" /><img src="Football%20Analytics/3.png" width="440" height="956" alt="Standings screen" /></picture>
     </div>
 
-    <!-- RESULTS -->
+    <!-- AT A GLANCE -->
+    <section class="card glance" aria-label="Project summary">
+      <div>
+        <span class="label">Problem</span>
+        <p>Football apps are built for analysts. Casual fans see metrics like xG with no explanation and give up on them.</p>
+      </div>
+      <div>
+        <span class="label">What I did</span>
+        <p>Surveyed 50 fans, analysed SofaScore, FotMob and Flashscore, then designed and tested a mobile prototype.</p>
+      </div>
+      <div>
+        <span class="label">Result</span>
+        <p><b>5.0/5</b> for ease of use. All five testers completed every task.</p>
+      </div>
+    </section>
+
+    <!-- RESEARCH -->
+    <section class="card read">
+      <div>
+        <span class="label">Research</span>
+        <h2>What fans told me, and what the market was missing.</h2>
+      </div>
+      <div class="body">
+        <p>I ran an online survey with 50 football fans and analysed three of the most-used stats apps. Four findings shaped everything that followed.</p>
+        <div class="tiles insight">
+          <div><b>Fans struggled to understand advanced metrics</b><span>Every complex stat needed a plain-language explanation, available in context.</span></div>
+          <div><b>Player statistics were what fans wanted most</b><span>Player information had to be the easiest thing to find.</span></div>
+          <div><b>Mobile was the most common device</b><span>The design had to be mobile-first, with touch-friendly, readable visuals.</span></div>
+          <div><b>Visualisations helped people understand data</b><span>Charts and timelines over dense tables, simple by default with detail on request.</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- COMPETITORS -->
+    <section class="card read">
+      <div>
+        <span class="label">Competitor analysis</span>
+        <h2>One app was too dense. The other hid the depth.</h2>
+      </div>
+      <div class="body">
+        <div class="tiles">
+          <div><b>SofaScore</b><span>Very detailed coverage of shots, xG and heatmaps, but it relies on numbers without guidance on how to read them. Information-dense screens lead to cognitive overload, especially on mobile.</span></div>
+          <div><b>FotMob</b><span>Clean, glanceable and fast for live matches, but advanced stats are hidden behind a button and some data lacks explanation.</span></div>
+        </div>
+        <p><b>The opportunity:</b> combine FotMob's immediacy and clear hierarchy with richer visualisations that explain what the numbers mean, layering advanced data so it is never all shown at once.</p>
+      </div>
+    </section>
+
+    <!-- PERSONA -->
+    <section class="card read">
+      <div>
+        <span class="label">Who I designed for</span>
+        <h2>David, a regular fan who wants to know <i>why</i>.</h2>
+      </div>
+      <div class="body">
+        <p>David watches football every week and knows the game well. He enjoys stats when they explain performance, and wants talking points for discussions with his friends.</p>
+        <div class="cols">
+          <div>
+            <h4>Pain points</h4>
+            <ul class="list">
+              <li>Raw data and stats without explanation</li>
+              <li>Overly technical terminology that is confusing</li>
+            </ul>
+          </div>
+          <div>
+            <h4>What he needs</h4>
+            <ul class="list">
+              <li>Visual explanations of performance</li>
+              <li>Simple definitions for advanced metrics</li>
+              <li>Easy player and match comparisons</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DECISIONS -->
+    <section class="card read">
+      <div>
+        <span class="label">Key decisions</span>
+        <h2>Three decisions, each traced back to the research.</h2>
+      </div>
+      <div class="body">
+        <p>From the findings I wrote a set of user requirements, then prioritised the ones that would make the biggest difference to a fan like David.</p>
+      </div>
+    </section>
+
+    <div class="decisions">
+      <section class="card decision" style="--tint: var(--sky);">
+        <div class="decision-text">
+          <span class="label">Decision 01 / 03</span>
+          <h3>Simple stats first, advanced metrics explained on demand</h3>
+          <dl class="why">
+            <div><dt>What I found</dt><dd>Fans struggled with advanced metrics, and both competitors presented numbers without guidance.</dd></div>
+            <div><dt>What I did</dt><dd>Familiar stats such as possession and shots lead each match. xG sits alongside them with an info icon that explains it in plain language, so confident fans aren't slowed down.</dd></div>
+          </dl>
+        </div>
+        <div class="decision-media"><picture><source srcset="Football%20Analytics/1.avif" type="image/avif" /><img loading="lazy" decoding="async" src="Football%20Analytics/1.png" width="440" height="956" alt="Home screen showing possession, expected goals with an info icon, and shots" /></picture></div>
+      </section>
+
+      <section class="card decision" style="--tint: var(--butter);">
+        <div class="decision-text">
+          <span class="label">Decision 02 / 03</span>
+          <h3>Charts that tell the story of a match</h3>
+          <dl class="why">
+            <div><dt>What I found</dt><dd>Fans found visualisations helpful, and wanted to understand why a team or player performed well, not just the final numbers.</dd></div>
+            <div><dt>What I did</dt><dd>A match momentum chart shows how the game swung over time, with a “What is this?” prompt for anyone unfamiliar with it.</dd></div>
+          </dl>
+        </div>
+        <div class="decision-media"><picture><source srcset="Football%20Analytics/4.avif" type="image/avif" /><img loading="lazy" decoding="async" src="Football%20Analytics/4.png" width="440" height="956" alt="Match overview with player of the match and a momentum chart with a What is this? prompt" /></picture></div>
+      </section>
+
+      <section class="card decision" style="--tint: var(--mint);">
+        <div class="decision-text">
+          <span class="label">Decision 03 / 03</span>
+          <h3>Break the match into focused tabs</h3>
+          <dl class="why">
+            <div><dt>What I found</dt><dd>SofaScore's information-dense screens caused cognitive overload, while FotMob's clear hierarchy worked well under time pressure.</dd></div>
+            <div><dt>What I did</dt><dd>Each match splits into Overview, Lineups, Statistics and Standings tabs, with grouped content cards and a bottom navigation bar, so fans see one layer of detail at a time.</dd></div>
+          </dl>
+        </div>
+        <div class="decision-media"><picture><source srcset="Football%20Analytics/5.avif" type="image/avif" /><img loading="lazy" decoding="async" src="Football%20Analytics/5.png" width="440" height="956" alt="Match lineups screen with Overview, Lineups, Statistics and Standings tabs" /></picture></div>
+      </section>
+    </div>
+
+    <!-- TESTING -->
+    <section class="card read">
+      <div>
+        <span class="label">Testing</span>
+        <h2>Did it actually help fans understand the data?</h2>
+      </div>
+      <div class="body">
+        <p>Five participants completed three tasks: finding a match, finding information about a player, and interpreting a statistic. They then rated the prototype in a questionnaire.</p>
+        <p>Simple navigation and the contextual explanations received the most positive feedback. Explanations still scored lowest of the four areas, so that is where I would focus the next round of iteration.</p>
+      </div>
+    </section>
+
     <section class="results" aria-label="Usability testing results">
       <div class="card dark result" style="--tint: var(--football);">
         <b>5.0<small>/5</small></b>
-        <p>Ease of use. All participants completed all tasks successfully.</p>
+        <p>Ease of use. All five participants completed all tasks successfully.</p>
       </div>
       <div class="card result" style="--tint: var(--sky);">
         <b>4.75<small>/5</small></b>
@@ -60,193 +196,6 @@
         <b>4.25<small>/5</small></b>
         <p>Contextual explanations for complex metrics including xG.</p>
       </div>
-    </section>
-
-    <!-- OVERVIEW -->
-    <section class="card read">
-      <div>
-        <span class="label">Overview</span>
-        <h2>Making football data understandable for everyone.</h2>
-      </div>
-      <div class="body">
-        <p>Football fans now have access to more statistics than ever before through platforms such as SofaScore, FotMob, and broadcast graphics. However, advanced metrics such as expected goals (xG) are often difficult for casual fans to understand due to cluttered layouts, limited explanations, and overwhelming amounts of information.</p>
-        <p>This project explored how UX/UI design could improve football fans' understanding and overall experience of football data, guided by three core principles.</p>
-        <div class="tiles three">
-          <div><b>Visual Hierarchy</b><span>Making the most important information stand out clearly at a glance.</span></div>
-          <div><b>Contextual Support</b><span>Providing in-context explanations for complex statistics like xG.</span></div>
-          <div><b>Usability</b><span>Ensuring the interface was intuitive and easy for any fan to navigate.</span></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- THE CHALLENGE -->
-    <section class="card read">
-      <div>
-        <span class="label">The challenge</span>
-        <h2>Built for analysts, not fans.</h2>
-      </div>
-      <div class="body">
-        <p>Many football data platforms are built for experienced users and analysts. Casual fans can struggle to:</p>
-        <ul class="list">
-          <li>Understand advanced metrics such as xG.</li>
-          <li>Find the most relevant information quickly.</li>
-          <li>Navigate large volumes of data.</li>
-          <li>Compare players and teams effectively.</li>
-        </ul>
-        <p>The challenge was to design an interface that made football data more accessible, engaging, and easier to understand.</p>
-      </div>
-    </section>
-
-    <!-- MY ROLE -->
-    <section class="card read">
-      <div>
-        <span class="label">My role</span>
-        <h2>End-to-end ownership across research, design, and testing.</h2>
-      </div>
-      <div class="body">
-        <p>I led this project in its entirety, covering every stage of the design process.</p>
-        <ul class="list">
-          <li>User research and competitor analysis</li>
-          <li>Information architecture</li>
-          <li>Wire-framing and low-fidelity concepts</li>
-          <li>High-fidelity UI design in Figma</li>
-          <li>Interactive prototyping</li>
-          <li>User testing and iteration</li>
-        </ul>
-      </div>
-    </section>
-
-    <!-- PROCESS -->
-    <section class="card read">
-      <div>
-        <span class="label">Process</span>
-        <h2>Following the Double Diamond from discovery to delivery.</h2>
-      </div>
-      <div class="body">
-        <p>The project followed the Double Diamond design framework — diverging to understand the problem space, then converging on a focused solution before expanding again through development and testing.</p>
-      </div>
-    </section>
-
-    <div class="phases">
-
-      <section class="card phase" style="--i: 0; --tint: var(--sky);">
-        <div>
-          <span class="label">01 / 04</span>
-          <h3>Discover</h3>
-          <p>Understand how football fans currently consume data and identify common frustrations.</p>
-        </div>
-        <div class="cols">
-          <div>
-            <h4>Activities</h4>
-            <ul class="list">
-              <li>Literature review</li>
-              <li>Competitor analysis — SofaScore, FotMob, Flashscore</li>
-              <li>Online survey with 50 respondents</li>
-            </ul>
-          </div>
-          <div>
-            <h4>Key findings</h4>
-            <ul class="list">
-              <li>Mobile phones were the most common device used</li>
-              <li>Users were most interested in player statistics</li>
-              <li>Many fans struggled to understand advanced metrics</li>
-              <li>Visualisations were seen as helpful for understanding data</li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      <section class="card phase" style="--i: 1; --tint: var(--butter);">
-        <div>
-          <span class="label">02 / 04</span>
-          <h3>Define</h3>
-          <p>Turn research findings into clear design requirements and user needs.</p>
-        </div>
-        <div class="cols">
-          <div>
-            <h4>User requirements</h4>
-            <ul class="list">
-              <li>Show key player statistics prominently</li>
-              <li>Provide explanations for advanced metrics</li>
-              <li>Use visualisations to support understanding</li>
-              <li>Allow filtering by league and season</li>
-              <li>Enable switching between player and team statistics</li>
-              <li>Keep the layout simple and uncluttered</li>
-            </ul>
-          </div>
-          <div>
-            <h4>Design principles</h4>
-            <ul class="list">
-              <li>Visual Hierarchy</li>
-              <li>Contextual Support</li>
-              <li>Usability</li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      <section class="card phase" style="--i: 2; --tint: var(--mint);">
-        <div>
-          <span class="label">03 / 04</span>
-          <h3>Develop</h3>
-          <p>Design and prototype a solution that addresses the identified user needs.</p>
-        </div>
-        <div class="cols">
-          <div>
-            <h4>Key features</h4>
-            <ul class="list">
-              <li>Personalised dashboard with favourite teams</li>
-              <li>Match centre with overview, lineups, statistics, and standings</li>
-              <li>Player and team statistics pages</li>
-              <li>Contextual help pop-ups for metrics such as xG</li>
-              <li>Player comparison tools</li>
-              <li>Heatmaps and form guides</li>
-            </ul>
-          </div>
-          <div>
-            <h4>Design decisions</h4>
-            <ul class="list">
-              <li>Grouped content cards to reduce cognitive load</li>
-              <li>Strong visual hierarchy to highlight key information</li>
-              <li>Segmented controls and bottom navigation for intuitive browsing</li>
-              <li>On-demand explanations to support understanding of complex metrics</li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      <section class="card phase" style="--i: 3; --tint: var(--rose);">
-        <div>
-          <span class="label">04 / 04</span>
-          <h3>Deliver</h3>
-          <p>Evaluate whether the prototype improved understanding and overall user experience.</p>
-        </div>
-        <div class="cols">
-          <div>
-            <h4>Testing method</h4>
-            <ul class="list">
-              <li>Task-based activities — finding a match, accessing player info, interpreting a statistic</li>
-              <li>Post-test questionnaire measuring usability, understanding, and visual hierarchy</li>
-            </ul>
-          </div>
-          <div>
-            <h4>Key learning</h4>
-            <ul class="list">
-              <li>Simple navigation and contextual explanations received the most positive feedback</li>
-              <li>UX/UI design can significantly improve how football data is understood</li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-    </div>
-
-    <!-- RESEARCH -->
-    <section class="frames" aria-label="Research and definition work">
-      <picture><source srcset="Football%20Analytics/Research/Frame%201.avif" type="image/avif" /><img loading="lazy" decoding="async" src="Football%20Analytics/Research/Frame%201.png" width="1323" height="962" alt="Research frame 1" /></picture>
-      <picture><source srcset="Football%20Analytics/Research/Frame%202.avif" type="image/avif" /><img loading="lazy" decoding="async" src="Football%20Analytics/Research/Frame%202.png" width="1323" height="962" alt="Research frame 2" /></picture>
-      <picture><source srcset="Football%20Analytics/Research/Frame%203.avif" type="image/avif" /><img loading="lazy" decoding="async" src="Football%20Analytics/Research/Frame%203.png" width="1323" height="962" alt="Research frame 3" /></picture>
-      <picture><source srcset="Football%20Analytics/Research/Frame%204.avif" type="image/avif" /><img loading="lazy" decoding="async" src="Football%20Analytics/Research/Frame%204.png" width="1323" height="962" alt="Research frame 4" /></picture>
     </section>
 
     <!-- SCREENS -->
@@ -266,23 +215,39 @@
       </div>
     </section>
 
-    <!-- OUTCOME -->
+    <!-- REFLECTION -->
     <section class="card read">
       <div>
-        <span class="label">Outcome</span>
-        <h2>Complex data, made genuinely accessible.</h2>
+        <span class="label">Reflection</span>
+        <h2>What I learned, and what comes next.</h2>
       </div>
       <div class="body">
-        <p>The final prototype demonstrated how football analytics can be presented in a way that is easier to understand, more visually engaging, simpler to navigate, and better suited to a wider range of fans.</p>
-        <p>This project reinforced the importance of combining research with design decisions. By focusing on visual hierarchy, contextual support, and usability, complex football data was transformed into a more accessible and enjoyable experience.</p>
-        <p>Future improvements could include live data integration, greater personalisation, and testing with a larger and more diverse audience.</p>
+        <p>Grounding each decision in research made the design easier to explain and easier to test.</p>
+        <p>Next, I would test with a larger and more varied group than five fans, refine the explanations based on their lower score, and explore live data and greater personalisation.</p>
       </div>
+    </section>
+
+    <!-- RESEARCH ARTEFACTS -->
+    <section class="card read">
+      <div>
+        <span class="label">Appendix</span>
+        <h2>Research artefacts.</h2>
+      </div>
+      <div class="body">
+        <p>The competitor analysis boards, user requirements and persona behind the decisions above.</p>
+      </div>
+    </section>
+    <section class="frames" aria-label="Research artefacts">
+      <picture><source srcset="Football%20Analytics/Research/Frame%201.avif" type="image/avif" /><img loading="lazy" decoding="async" src="Football%20Analytics/Research/Frame%201.png" width="1323" height="962" alt="SofaScore competitor analysis: strengths, weaknesses and takeaways" /></picture>
+      <picture><source srcset="Football%20Analytics/Research/Frame%202.avif" type="image/avif" /><img loading="lazy" decoding="async" src="Football%20Analytics/Research/Frame%202.png" width="1323" height="962" alt="FotMob competitor analysis: strengths, weaknesses and takeaways" /></picture>
+      <picture><source srcset="Football%20Analytics/Research/Frame%203.avif" type="image/avif" /><img loading="lazy" decoding="async" src="Football%20Analytics/Research/Frame%203.png" width="1323" height="962" alt="User requirements grouped by content, visual, interaction and accessibility" /></picture>
+      <picture><source srcset="Football%20Analytics/Research/Frame%204.avif" type="image/avif" /><img loading="lazy" decoding="async" src="Football%20Analytics/Research/Frame%204.png" width="1323" height="962" alt="Persona: David Smith, a regular fan" /></picture>
     </section>
 
     <!-- NEXT PROJECT -->
     <a class="card dark next" style="--tint: var(--hawkeye); --accent: var(--hawkeye-accent); --on-accent: var(--ink);" href="hawk-eye.html">
       <div class="next-text">
-        <span class="label">Next · 02 / 06</span>
+        <span class="label">Next · 02 / 05</span>
         <h2>Hawk-Eye Innovations</h2>
         <span class="more">View work →</span>
       </div>

@@ -21,7 +21,7 @@
   </nav>
 
   <header class="hero case">
-    <span class="label">04 / 06 · Case study</span>
+    <span class="label">03 / 05 · Case study</span>
     <h1>AI Chef App</h1>
     <p>A concept app exploring how AI can simplify cooking and personalise meal planning — helping users decide what to cook based on available ingredients, dietary needs, and personal preferences.</p>
     <div class="pills">
@@ -42,51 +42,76 @@
       <picture><source srcset="AI%20chef/9.avif" type="image/avif" /><img src="AI%20chef/9.jpg" width="440" height="956" alt="AI Chef screen" /></picture>
     </div>
 
-    <!-- OVERVIEW -->
-    <section class="card read">
+    <!-- AT A GLANCE -->
+    <section class="card glance" aria-label="Project summary">
       <div>
-        <span class="label">Overview</span>
-        <h2>AI that makes cooking simpler, not more complicated.</h2>
+        <span class="label">Problem</span>
+        <p>Recipe apps start with a search box. The idea was to start from the ingredients people already have.</p>
       </div>
-      <div class="body">
-        <p>The AI Chef App is a concept project that explores how artificial intelligence can make cooking easier and more personalised. The idea behind the app is to help users decide what to cook based on the ingredients they already have, their dietary needs, and their preferences.</p>
-        <p>I focused on creating a clean, easy-to-use interface — paying close attention to user flows, layout, and accessibility to make sure the experience feels simple and helpful rather than overwhelming.</p>
-        <p>This project allowed me to combine problem-solving, user research, and visual design to create a practical app idea that uses AI in a meaningful and user-friendly way.</p>
+      <div>
+        <span class="label">What I did</span>
+        <p>A short university concept: mapped where AI could genuinely help, then designed and prototyped the app in Figma.</p>
+      </div>
+      <div>
+        <span class="label">Result</span>
+        <p>An 11-screen concept covering onboarding, ingredient scanning, recommendations and nutrition.</p>
       </div>
     </section>
 
-    <!-- DEFINING THE EXPERIENCE -->
     <section class="card read">
       <div>
         <span class="label">Defining the experience</span>
-        <h2>Five core areas to support users throughout their food journey.</h2>
+        <h2>Where could AI actually help?</h2>
       </div>
       <div class="body">
-        <p>To understand where AI could provide the most value, I mapped the product into five core areas. The goal was to support users throughout their food journey rather than simply provide recipes — identifying where AI could meaningfully assist with decision-making, from recognising ingredients to surfacing personalised nutritional insights.</p>
+        <p>Rather than add AI everywhere, I mapped the food journey into five areas and asked where AI could meaningfully help someone decide, from recognising ingredients to surfacing nutritional insights.</p>
         <div class="pills">
-          <span class="pill">Onboarding Preferences</span>
-          <span class="pill">Meal Recommendations</span>
-          <span class="pill">Recipe Discovery</span>
-          <span class="pill">Ingredient Scanning</span>
-          <span class="pill">Nutrition Insights</span>
+          <span class="pill">Onboarding preferences</span>
+          <span class="pill">Meal recommendations</span>
+          <span class="pill">Recipe discovery</span>
+          <span class="pill">Ingredient scanning</span>
+          <span class="pill">Nutrition insights</span>
         </div>
       </div>
     </section>
 
-    <!-- KEY DESIGN DECISIONS -->
-    <section class="card read">
-      <div>
-        <span class="label">Key design decisions</span>
-        <h2>Three principles that shaped the experience.</h2>
-      </div>
-      <div class="body">
-        <div class="tiles">
-          <div><b>Ingredient-First Discovery</b><span>Rather than requiring users to search for recipes, I explored an ingredient scanning feature that allows users to photograph available ingredients and receive relevant meal suggestions. This approach reduces friction and helps minimise food waste.</span></div>
-          <div><b>Actionable AI Insights</b><span>Instead of overwhelming users with nutritional data, the AI surfaces a single meaningful insight or recommendation — making the experience feel helpful rather than intrusive.</span></div>
-          <div><b>Personalised Recommendations</b><span>Recipe suggestions are influenced by user preferences, previous meals, and nutritional patterns to create a more tailored experience than traditional recipe browsing.</span></div>
+    <div class="decisions">
+      <section class="card decision" style="--tint: var(--butter);">
+        <div class="decision-text">
+          <span class="label">Decision 01 / 03</span>
+          <h3>Start from the ingredients, not a search</h3>
+          <dl class="why">
+            <div><dt>The problem</dt><dd>Searching for recipes assumes you already know what you want to cook.</dd></div>
+            <div><dt>What I designed</dt><dd>Users photograph the ingredients they have, the app recognises them, and suggests meals. It also helps reduce food waste.</dd></div>
+          </dl>
         </div>
-      </div>
-    </section>
+        <div class="decision-media"><picture><source srcset="AI%20chef/8.avif" type="image/avif" /><img loading="lazy" decoding="async" src="AI%20chef/8.jpg" width="440" height="956" alt="Ingredient scanner labelling items on a kitchen worktop" /></picture></div>
+      </section>
+
+      <section class="card decision" style="--tint: var(--sky);">
+        <div class="decision-text">
+          <span class="label">Decision 02 / 03</span>
+          <h3>One insight, not a wall of numbers</h3>
+          <dl class="why">
+            <div><dt>The problem</dt><dd>Nutritional data quickly becomes overwhelming and can feel intrusive.</dd></div>
+            <div><dt>What I designed</dt><dd>The AI surfaces a single detected pattern alongside daily intake, so the insight feels helpful rather than judgemental.</dd></div>
+          </dl>
+        </div>
+        <div class="decision-media"><picture><source srcset="AI%20chef/5.avif" type="image/avif" /><img loading="lazy" decoding="async" src="AI%20chef/5.jpg" width="440" height="956" alt="Nutrition screen with daily intake and one AI detected pattern" /></picture></div>
+      </section>
+
+      <section class="card decision" style="--tint: var(--mint);">
+        <div class="decision-text">
+          <span class="label">Decision 03 / 03</span>
+          <h3>Recommendations that know you</h3>
+          <dl class="why">
+            <div><dt>The problem</dt><dd>Generic recipe browsing ignores what you like and what you've already eaten.</dd></div>
+            <div><dt>What I designed</dt><dd>Suggestions draw on preferences set during onboarding, previous meals and nutritional patterns.</dd></div>
+          </dl>
+        </div>
+        <div class="decision-media"><picture><source srcset="AI%20chef/3.avif" type="image/avif" /><img loading="lazy" decoding="async" src="AI%20chef/3.jpg" width="440" height="956" alt="Home screen with AI Chef recommended meals" /></picture></div>
+      </section>
+    </div>
 
     <!-- APP SCREENS -->
     <section class="card dark" style="--tint: var(--aichef);">
@@ -106,10 +131,20 @@
       </div>
     </section>
 
+    <section class="card read">
+      <div>
+        <span class="label">Reflection</span>
+        <h2>What I would test next.</h2>
+      </div>
+      <div class="body">
+        <p>This was a short concept project, so research and testing were light. If I took it further, I would test whether people trust the ingredient recognition, and whether a single insight is enough to change what they cook.</p>
+      </div>
+    </section>
+
     <!-- NEXT PROJECT -->
     <a class="card next" style="--tint: var(--volta);" href="volta-management.html">
       <div class="next-text">
-        <span class="label">Next · 05 / 06</span>
+        <span class="label">Next · 04 / 05</span>
         <h2>Volta Management</h2>
         <span class="more">View work →</span>
       </div>

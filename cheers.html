@@ -114,7 +114,7 @@
     <div class="decisions">
       <section class="card decision" style="--tint: var(--peach);">
         <div class="decision-text">
-          <span class="label">Decision 01 / 04</span>
+          <span class="label">Decision 01 / 03</span>
           <h3>Start with the camera</h3>
           <dl class="why">
             <div><dt>What I found</dt><dd>Jamie already takes photos of new drinks, but won't bother with anything that takes more than a few taps.</dd></div>
@@ -126,7 +126,7 @@
 
       <section class="card decision" style="--tint: var(--butter);">
         <div class="decision-text">
-          <span class="label">Decision 02 / 04</span>
+          <span class="label">Decision 02 / 03</span>
           <h3>One score out of ten for every drink</h3>
           <dl class="why">
             <div><dt>What I found</dt><dd>Jamie drinks everything from stouts to spritzes, and already gives drinks a score out of ten with friends. Beer-only apps and five-star ratings didn't fit.</dd></div>
@@ -138,7 +138,7 @@
 
       <section class="card decision" style="--tint: var(--sky);">
         <div class="decision-text">
-          <span class="label">Decision 03 / 04</span>
+          <span class="label">Decision 03 / 03</span>
           <h3>Friends only</h3>
           <dl class="why">
             <div><dt>What I found</dt><dd>Priya trusts her friends' taste more than reviews, and doesn't want her drinks to be public.</dd></div>
@@ -146,18 +146,6 @@
           </dl>
         </div>
         <div class="decision-media"><picture><source srcset="Cheers/Screens/cheered.avif" type="image/avif" /><img loading="lazy" decoding="async" src="Cheers/Screens/cheered.jpg" width="590" height="1278" alt="A friend's post with the Cheers! button tapped" /></picture></div>
-      </section>
-
-      <section class="card decision" style="--tint: var(--mint);">
-        <div class="decision-text">
-          <span class="label">Decision 04 / 04</span>
-          <h3>Cut the Track tab to keep the first version simple</h3>
-          <dl class="why">
-            <div><dt>What I found</dt><dd>I'd designed and built a third tab, Track, for taste stats and drink-free days. It repeated the Top rated row on the profile, its charts were empty for new users, and drink-free days guessed from posts were often wrong. I'd already taken alcohol units out of it, because that counts as health data and could encourage drinking more.</dd></div>
-            <div><dt>What I did</dt><dd>I hid Track for the first version, leaving two tabs, Home and Profile, next to the rate button. Every screen now points at the main thing: take a photo, rate it, share it. Track can be switched back on if testing shows people want it.</dd></div>
-          </dl>
-        </div>
-        <div class="decision-media"><picture><source srcset="Cheers/Screens/profile.avif" type="image/avif" /><img loading="lazy" decoding="async" src="Cheers/Screens/profile.jpg" width="590" height="1278" alt="The profile, with Top rated and All ratings, and a tab bar of just Home and Profile" /></picture></div>
       </section>
     </div>
 
@@ -168,13 +156,13 @@
         <h2>Making rating easy to reach.</h2>
       </div>
       <div class="body">
-        <p>I mapped out every screen. Home, Track and Profile started as tabs, and rating a drink got its own + button, because it's what people will do most. The first version ships with just Home and Profile (see decision 04).</p>
+        <p>I mapped out every screen. Home and Profile became tabs, and rating a drink got its own + button, because it's what people will do most.</p>
         <p>I then mapped the two most important flows: signing up for the first time, and adding a friend.</p>
       </div>
     </section>
 
     <section class="frames" aria-label="Structure and user flows">
-      <picture><source srcset="Cheers/Research/floor-plan-map.avif" type="image/avif" /><img loading="lazy" decoding="async" src="Cheers/Research/floor-plan-map.jpg" width="1323" height="962" alt="App structure: Onboarding, Home, Rate a Drink, Track, and Profile and Settings, each with its screens" /></picture>
+      <picture><source srcset="Cheers/Research/floor-plan-map.avif" type="image/avif" /><img loading="lazy" decoding="async" src="Cheers/Research/floor-plan-map.jpg" width="1323" height="962" alt="App structure: Onboarding, Home, Rate a Drink, and Profile and Settings, each with its screens" /></picture>
       <picture><source srcset="Cheers/Research/second-round-flow.avif" type="image/avif" /><img loading="lazy" decoding="async" src="Cheers/Research/second-round-flow.jpg" width="1323" height="962" alt="Two user flows: first-time onboarding, and adding a friend" /></picture>
     </section>
 
@@ -198,9 +186,8 @@
       <picture><source srcset="Cheers/Research/small-batch-frames.avif" type="image/avif" /><img loading="lazy" decoding="async" src="Cheers/Research/small-batch-frames.jpg" width="1240" height="556" alt="Five wireframes for rating a drink: camera, review photo, rating form, add location, posted" /></picture>
     </section>
 
-    <section class="frames" aria-label="Onboarding and ratings wireframes">
+    <section class="frames narrow" aria-label="Onboarding wireframes">
       <picture><source srcset="Cheers/Research/first-sip-frames.avif" type="image/avif" /><img loading="lazy" decoding="async" src="Cheers/Research/first-sip-frames.jpg" width="1323" height="962" alt="Three onboarding wireframes: welcome, a sign-up step, and Home on first use" /></picture>
-      <picture><source srcset="Cheers/Research/running-tab-frames.avif" type="image/avif" /><img loading="lazy" decoding="async" src="Cheers/Research/running-tab-frames.jpg" width="1323" height="962" alt="Five wireframes: profile, a drink's page, and Track's taste, by-type and moderation views" /></picture>
     </section>
 
     <section class="card dark" style="--tint: var(--cheers);">
@@ -233,7 +220,7 @@
         <h2>What I learned and what's next.</h2>
       </div>
       <div class="body">
-        <p>Building the app myself, with help from Claude Code, changed how I designed. I had to think beyond the screens, about things like Apple's rules on location search and whether the AI feature was worth what it cost. I also learned to cut finished work: Track was built and working, but hiding it made the app clearer.</p>
+        <p>Building the app myself, with help from Claude Code, changed how I designed. I had to think beyond the screens, about things like Apple's rules on location search and whether the AI feature was worth what it cost.</p>
         <p>The personas are still based on assumptions, so the next stage is user testing. I'll start with a few friends using the app, to see if rating is quick enough and whether seeing friends' ratings gets people trying new drinks.</p>
       </div>
     </section>

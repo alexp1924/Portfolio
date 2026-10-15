@@ -39,7 +39,7 @@
       <picture><source srcset="Cheers/Screens/home.avif" type="image/avif" /><img src="Cheers/Screens/home.jpg" width="590" height="1278" alt="Home feed with a friend's strawberry spritz, rated 9.0" /></picture>
       <picture><source srcset="Cheers/Screens/rating.avif" type="image/avif" /><img src="Cheers/Screens/rating.jpg" width="590" height="1278" alt="Rating a drink: name, type and a rating slider out of 10" /></picture>
       <picture><source srcset="Cheers/Screens/profile.avif" type="image/avif" /><img src="Cheers/Screens/profile.jpg" width="590" height="1278" alt="Profile with a Top rated row of drink photos and the full list below" /></picture>
-      <picture><source srcset="Cheers/Screens/toprated.avif" type="image/avif" /><img src="Cheers/Screens/toprated.jpg" width="590" height="1278" alt="Track, Taste view: the drinks you've rated highest and how you rate" /></picture>
+      <picture><source srcset="Cheers/Screens/post.avif" type="image/avif" /><img src="Cheers/Screens/post.jpg" width="590" height="1278" alt="A drink's own page: a Heineken by the sea, rated 7.5" /></picture>
     </div>
 
     <!-- AT A GLANCE -->
@@ -151,13 +151,13 @@
       <section class="card decision" style="--tint: var(--mint);">
         <div class="decision-text">
           <span class="label">Decision 04 / 04</span>
-          <h3>Don't track how much people drink</h3>
+          <h3>Cut the Track tab to keep the first version simple</h3>
           <dl class="why">
-            <div><dt>What I found</dt><dd>Jamie wants to remember good drinks, not count them. I originally added alcohol units to the Track page, but realised that counts as health data and could encourage drinking more.</dd></div>
-            <div><dt>What I did</dt><dd>I removed the units. Track now only shows what you like, and highlights drink-free days without streaks or badges. I also used the word “rate” throughout instead of “log”.</dd></div>
+            <div><dt>What I found</dt><dd>I'd designed and built a third tab, Track, for taste stats and drink-free days. It repeated the Top rated row on the profile, its charts were empty for new users, and drink-free days guessed from posts were often wrong. I'd already taken alcohol units out of it, because that counts as health data and could encourage drinking more.</dd></div>
+            <div><dt>What I did</dt><dd>I hid Track for the first version, leaving two tabs, Home and Profile, next to the rate button. Every screen now points at the main thing: take a photo, rate it, share it. Track can be switched back on if testing shows people want it.</dd></div>
           </dl>
         </div>
-        <div class="decision-media"><picture><source srcset="Cheers/Screens/track.avif" type="image/avif" /><img loading="lazy" decoding="async" src="Cheers/Screens/track.jpg" width="590" height="1278" alt="Track's Moderation view: four days off this week" /></picture></div>
+        <div class="decision-media"><picture><source srcset="Cheers/Screens/profile.avif" type="image/avif" /><img loading="lazy" decoding="async" src="Cheers/Screens/profile.jpg" width="590" height="1278" alt="The profile, with Top rated and All ratings, and a tab bar of just Home and Profile" /></picture></div>
       </section>
     </div>
 
@@ -168,7 +168,7 @@
         <h2>Making rating easy to reach.</h2>
       </div>
       <div class="body">
-        <p>I mapped out every screen. Home, Track and Profile became tabs, and rating a drink got its own + button, because it's what people will do most.</p>
+        <p>I mapped out every screen. Home, Track and Profile started as tabs, and rating a drink got its own + button, because it's what people will do most. The first version ships with just Home and Profile (see decision 04).</p>
         <p>I then mapped the two most important flows: signing up for the first time, and adding a friend.</p>
       </div>
     </section>
@@ -215,7 +215,7 @@
     <!-- SCREENS -->
     <section class="card dark" style="--tint: var(--cheers);">
       <div class="caption"><span class="label">The app</span></div>
-      <div class="screens" style="--cols: 5;">
+      <div class="screens" style="--cols: 7;">
         <picture><source srcset="Cheers/Screens/home.avif" type="image/avif" /><img loading="lazy" decoding="async" src="Cheers/Screens/home.jpg" width="590" height="1278" alt="Home feed" /></picture>
         <picture><source srcset="Cheers/Screens/cheered.avif" type="image/avif" /><img loading="lazy" decoding="async" src="Cheers/Screens/cheered.jpg" width="590" height="1278" alt="A post with Cheers! tapped" /></picture>
         <picture><source srcset="Cheers/Screens/comments.avif" type="image/avif" /><img loading="lazy" decoding="async" src="Cheers/Screens/comments.jpg" width="590" height="1278" alt="Comments" /></picture>
@@ -223,9 +223,6 @@
         <picture><source srcset="Cheers/Screens/camera.avif" type="image/avif" /><img loading="lazy" decoding="async" src="Cheers/Screens/camera.jpg" width="590" height="1278" alt="Camera" /></picture>
         <picture><source srcset="Cheers/Screens/rating.avif" type="image/avif" /><img loading="lazy" decoding="async" src="Cheers/Screens/rating.jpg" width="590" height="1278" alt="Rating a drink" /></picture>
         <picture><source srcset="Cheers/Screens/profile.avif" type="image/avif" /><img loading="lazy" decoding="async" src="Cheers/Screens/profile.jpg" width="590" height="1278" alt="Profile" /></picture>
-        <picture><source srcset="Cheers/Screens/toprated.avif" type="image/avif" /><img loading="lazy" decoding="async" src="Cheers/Screens/toprated.jpg" width="590" height="1278" alt="Track, top rated" /></picture>
-        <picture><source srcset="Cheers/Screens/types.avif" type="image/avif" /><img loading="lazy" decoding="async" src="Cheers/Screens/types.jpg" width="590" height="1278" alt="Track, rating by type and drink types" /></picture>
-        <picture><source srcset="Cheers/Screens/track.avif" type="image/avif" /><img loading="lazy" decoding="async" src="Cheers/Screens/track.jpg" width="590" height="1278" alt="Track, drink-free days" /></picture>
       </div>
     </section>
 
@@ -236,7 +233,7 @@
         <h2>What I learned and what's next.</h2>
       </div>
       <div class="body">
-        <p>Building the app myself, with help from Claude Code, changed how I designed. I had to think beyond the screens, about things like Apple's rules on location search and whether the AI feature was worth what it cost.</p>
+        <p>Building the app myself, with help from Claude Code, changed how I designed. I had to think beyond the screens, about things like Apple's rules on location search and whether the AI feature was worth what it cost. I also learned to cut finished work: Track was built and working, but hiding it made the app clearer.</p>
         <p>The personas are still based on assumptions, so the next stage is user testing. I'll start with a few friends using the app, to see if rating is quick enough and whether seeing friends' ratings gets people trying new drinks.</p>
       </div>
     </section>

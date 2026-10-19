@@ -21,7 +21,7 @@
   </nav>
 
   <header class="hero case">
-    <span class="label">01 / 06 · Case study</span>
+    <span class="label">02 / 06 · Case study</span>
     <h1>Cheers</h1>
     <p>An iPhone app for rating the drinks you try out of ten and sharing them with friends. I designed it and built it myself, from the first research to a working app.</p>
     <div class="pills">
@@ -54,8 +54,21 @@
       </div>
       <div>
         <span class="label">Result</span>
-        <p>A <b>working app</b> where you take a photo of a drink, rate it and see your friends' ratings. Next up is user testing.</p>
+        <p>A <b>working app</b> where you take a photo of a drink, rate it and see your friends' ratings. Next up is wider user testing.</p>
       </div>
+    </section>
+
+    <!-- PROCESS -->
+    <section class="card process" aria-label="Design process">
+      <span class="label">Process</span>
+      <ol style="--steps: 6;">
+        <li><b>Research</b><span>Personas for both sides of the app, and Mobbin to see how other apps handle each screen.</span></li>
+        <li><b>Define</b><span>Need statements and How Might We questions.</span></li>
+        <li><b>Ideate</b><span>Brainstormed ideas for each question and grouped them into themes.</span></li>
+        <li><b>Design</b><span>Sitemap, user flows and greyscale wireframes, then visual design.</span></li>
+        <li><b>Build</b><span>Built it with Claude Code, and changed the design as I used it.</span></li>
+        <li><b>Test</b><span>Quick tests with friends at the pub, to keep it focused on the core problem.</span></li>
+      </ol>
     </section>
 
     <!-- RESEARCH -->
@@ -118,10 +131,10 @@
           <h3>Start with the camera</h3>
           <dl class="why">
             <div><dt>What I found</dt><dd>Jamie already takes photos of new drinks, but won't bother with anything that takes more than a few taps.</dd></div>
-            <div><dt>What I did</dt><dd>Rating starts with a photo, then you add a name, type and score. I also designed an AI feature that reads the label and fills in the form for you to check. In testing it only saved a couple of fields and added cost and waiting time, so I turned it off for now.</dd></div>
+            <div><dt>What I did</dt><dd>Rating starts with a photo, then you add a name, type and score. Everything else is optional, so posting a drink only takes a few taps.</dd></div>
           </dl>
         </div>
-        <div class="decision-media"><picture><source srcset="Cheers/Screens/form.avif" type="image/avif" /><img loading="lazy" decoding="async" src="Cheers/Screens/form.jpg" width="590" height="1278" alt="The form filled in from a photo, with a copper banner saying to check it looks right" /></picture></div>
+        <div class="decision-media"><picture><source srcset="Cheers/Screens/camera.avif" type="image/avif" /><img loading="lazy" decoding="async" src="Cheers/Screens/camera.jpg" width="590" height="1278" alt="The camera screen, where rating a drink starts" /></picture></div>
       </section>
 
       <section class="card decision" style="--tint: var(--butter);">
@@ -199,6 +212,44 @@
       </div>
     </section>
 
+    <!-- ITERATION -->
+    <section class="card read">
+      <div>
+        <span class="label">Iteration</span>
+        <h2>What changed as I built and tested it.</h2>
+      </div>
+      <div class="body">
+        <p>Building the app meant I could try ideas for real, and change them when they didn't work.</p>
+        <p>I've also tested it with a few friends while out at the pub. Their reactions kept me focused on what they actually wanted, stopped me adding features nobody needed, and kept the app on the core problem.</p>
+        <div class="loops">
+          <div class="loop">
+            <b>Tracking how much you drink</b>
+            <dl>
+              <div><dt>First idea</dt><dd>A feature to let people keep track of how much they're drinking.</dd></div>
+              <div><dt>What I learned</dt><dd>It's an interesting idea, but it would only be as accurate as what people post. Most people won't log every drink, so the totals would often be wrong. It also raised trickier questions, like whether drinking data counts as health data.</dd></div>
+              <div><dt>What I changed</dt><dd>I left it out. Cheers is about remembering the drinks you enjoyed, not counting them.</dd></div>
+            </dl>
+          </div>
+          <div class="loop">
+            <b>Fewer main pages</b>
+            <dl>
+              <div><dt>First idea</dt><dd>Four main pages: a home feed of friends' drinks, a stats page for tracking your drinking, a “my log” page, and a profile with settings.</dd></div>
+              <div><dt>What I learned</dt><dd>Some of these overlapped, and some weren't needed. They pulled attention away from the core of the app: take a photo of a drink you like, rate it, save it to your profile and share it with friends.</dd></div>
+              <div><dt>What I changed</dt><dd>I cut it down to two pages, Home and Profile, plus a button to rate a drink. Home is where you see and react to friends' drinks, discover new ones and compare ratings. Your log is now part of your profile.</dd></div>
+            </dl>
+          </div>
+          <div class="loop">
+            <b>AI auto-fill</b>
+            <dl>
+              <div><dt>First idea</dt><dd>Take a photo of your drink and let AI fill in all the details for you.</dd></div>
+              <div><dt>What I learned</dt><dd>It was a cool feature, but it didn't really save any time. You only need a name, a type and a score, and each scan costs money, even if only a little.</dd></div>
+              <div><dt>What I changed</dt><dd>I left it out, as it wasn't really needed. It's an idea I could bring back later.</dd></div>
+            </dl>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- SCREENS -->
     <section class="card dark" style="--tint: var(--cheers);">
       <div class="caption"><span class="label">The app</span></div>
@@ -220,15 +271,21 @@
         <h2>What I learned and what's next.</h2>
       </div>
       <div class="body">
-        <p>Building the app myself, with help from Claude Code, changed how I designed. I had to think beyond the screens, about things like Apple's rules on location search and whether the AI feature was worth what it cost.</p>
-        <p>The personas are still based on assumptions, so the next stage is user testing. I'll start with a few friends using the app, to see if rating is quick enough and whether seeing friends' ratings gets people trying new drinks.</p>
+        <p>Building the app myself, with help from Claude Code, changed how I designed. Trying ideas in a real app showed me problems a static prototype wouldn't, like what the AI feature cost and Apple's rules on location search.</p>
+        <p>I've tested it informally with friends, but the personas are still mostly assumptions. Next is wider user testing. I want to find out:</p>
+        <ul class="list">
+          <li>Is rating quick enough to do mid-conversation?</li>
+          <li>Do people trust friends' ratings more than reviews, like the personas assume?</li>
+          <li>Do friends' ratings actually get people trying new drinks?</li>
+        </ul>
+        <p>Then I'll change the design based on what I learn.</p>
       </div>
     </section>
 
     <!-- NEXT PROJECT -->
     <a class="card dark next" style="--tint: var(--football); --accent: var(--football-accent); --on-accent: var(--ink);" href="football-analytics.html">
       <div class="next-text">
-        <span class="label">Next · 02 / 06</span>
+        <span class="label">Next · 03 / 06</span>
         <h2>Football Analytics App</h2>
         <span class="more">View work →</span>
       </div>

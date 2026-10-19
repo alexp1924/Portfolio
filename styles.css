@@ -1061,7 +1061,8 @@ footer a:hover {
 
 .project-media.logo > picture > img,
 .project-media.logo > img {
-  width: min(78%, 520px);
+  width: min(50%, 320px);
+  margin: auto;
   height: auto;
   border-radius: 0;
   box-shadow: none;

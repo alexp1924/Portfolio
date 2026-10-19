@@ -1051,3 +1051,19 @@ footer a:hover {
     gap: 2px;
   }
 }
+
+/* A logo shown on its own, centred, instead of a screenshot */
+.project-media.logo {
+  padding: var(--in);
+  align-items: center;
+  justify-content: center;
+}
+
+.project-media.logo > picture > img,
+.project-media.logo > img {
+  width: min(78%, 520px);
+  height: auto;
+  border-radius: 0;
+  box-shadow: none;
+  outline: none;
+}

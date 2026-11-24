@@ -5,10 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Smart Boot Companion App — Alex Pearson</title>
   <meta name="description" content="Case study: a mobile companion app for smart football boots, covering setup, live session tracking and analysis." />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=3" />
+  <link rel="preload" href="fonts/figtree-latin.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="styles.css?v=4" />
+  <script type="speculationrules">
+    {"prerender": [{"where": {"href_matches": "/*"}, "eagerness": "moderate"}]}
+  </script>
 </head>
 <body>
 
@@ -35,7 +36,7 @@
   <main class="wrap">
 
     <div class="card showcase" style="--tint: var(--smartboot);">
-      <picture><source srcset="Smart%20boot%20screes/4.avif" type="image/avif" /><img src="Smart%20boot%20screes/4.png" width="440" height="956" alt="Home screen with connected boots and last session" /></picture>
+      <picture><source srcset="Smart%20boot%20screes/4.avif" type="image/avif" /><img fetchpriority="high" src="Smart%20boot%20screes/4.png" width="440" height="956" alt="Home screen with connected boots and last session" /></picture>
       <picture><source srcset="Smart%20boot%20screes/6.avif" type="image/avif" /><img src="Smart%20boot%20screes/6.png" width="440" height="956" alt="Live session screen" /></picture>
       <picture><source srcset="Smart%20boot%20screes/7.avif" type="image/avif" /><img src="Smart%20boot%20screes/7.png" width="440" height="956" alt="Session summary screen" /></picture>
       <picture><source srcset="Smart%20boot%20screes/5.avif" type="image/avif" /><img src="Smart%20boot%20screes/5.png" width="440" height="956" alt="Smart Boot screen" /></picture>

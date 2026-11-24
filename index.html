@@ -5,10 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Alex Pearson — UX / UI Designer</title>
   <meta name="description" content="Alex Pearson is a UX/UI designer who researches, designs and prototypes digital products." />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=3" />
+  <link rel="preload" href="fonts/figtree-latin.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="styles.css?v=4" />
+  <script type="speculationrules">
+    {"prerender": [{"where": {"href_matches": "/*"}, "eagerness": "moderate"}]}
+  </script>
 </head>
 <body>
 
@@ -38,7 +39,7 @@
         </div>
         <span class="more">View work →</span>
       </div>
-      <div class="project-media logo"><img src="Hawk-eye/hawk-eye-logo.png" width="1200" height="270" alt="Hawk-Eye Innovations logo" /></div>
+      <div class="project-media logo"><img fetchpriority="high" src="Hawk-eye/hawk-eye-logo.png" width="1200" height="270" alt="Hawk-Eye Innovations logo" /></div>
     </a>
 
     <a class="card dark project" style="--i: 1; --tint: var(--cheers); --accent: var(--cheers-accent); --on-accent: var(--ink);" href="cheers.html">

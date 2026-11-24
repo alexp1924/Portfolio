@@ -5,10 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Hawk-Eye Innovations — Alex Pearson</title>
   <meta name="description" content="Case study: a no-ball review panel for live cricket, designed during a placement year at Hawk-Eye Innovations and now used in the IPL." />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=3" />
+  <link rel="preload" href="fonts/figtree-latin.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="styles.css?v=4" />
+  <script type="speculationrules">
+    {"prerender": [{"where": {"href_matches": "/*"}, "eagerness": "moderate"}]}
+  </script>
 </head>
 <body>
 
@@ -35,7 +36,7 @@
   <main class="wrap">
 
     <div class="card dark showcase-wide fit" style="--tint: var(--hawkeye);">
-      <picture><source srcset="Hawk-eye/CRICKET/46a21210-5cc7-4620-80fc-959860d0a033_rw_1920.avif" type="image/avif" /><img src="Hawk-eye/CRICKET/46a21210-5cc7-4620-80fc-959860d0a033_rw_1920.png" width="1920" height="1040" alt="The No Ball review panel, with numbered steps on the left and batter selection open" /></picture>
+      <picture><source srcset="Hawk-eye/CRICKET/46a21210-5cc7-4620-80fc-959860d0a033_rw_1920.avif" type="image/avif" /><img fetchpriority="high" src="Hawk-eye/CRICKET/46a21210-5cc7-4620-80fc-959860d0a033_rw_1920.png" width="1920" height="1040" alt="The No Ball review panel, with numbered steps on the left and batter selection open" /></picture>
     </div>
 
     <section class="card read">

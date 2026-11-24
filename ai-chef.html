@@ -5,10 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>AI Chef App — Alex Pearson</title>
   <meta name="description" content="Case study: a concept app that uses AI to help people decide what to cook from the ingredients they already have." />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=3" />
+  <link rel="preload" href="fonts/figtree-latin.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="styles.css?v=4" />
+  <script type="speculationrules">
+    {"prerender": [{"where": {"href_matches": "/*"}, "eagerness": "moderate"}]}
+  </script>
 </head>
 <body>
 
@@ -35,7 +36,7 @@
   <main class="wrap">
 
     <div class="card dark showcase" style="--tint: var(--aichef);">
-      <picture><source srcset="AI%20chef/8.avif" type="image/avif" /><img src="AI%20chef/8.jpg" width="440" height="956" alt="Ingredient scanner labelling items on a worktop" /></picture>
+      <picture><source srcset="AI%20chef/8.avif" type="image/avif" /><img fetchpriority="high" src="AI%20chef/8.jpg" width="440" height="956" alt="Ingredient scanner labelling items on a worktop" /></picture>
       <picture><source srcset="AI%20chef/3.avif" type="image/avif" /><img src="AI%20chef/3.jpg" width="440" height="956" alt="Home screen with recommended meals" /></picture>
       <picture><source srcset="AI%20chef/5.avif" type="image/avif" /><img src="AI%20chef/5.jpg" width="440" height="956" alt="Nutrition screen" /></picture>
       <picture><source srcset="AI%20chef/2.avif" type="image/avif" /><img src="AI%20chef/2.jpg" width="440" height="956" alt="AI Chef screen" /></picture>

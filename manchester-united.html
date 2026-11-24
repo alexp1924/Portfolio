@@ -5,10 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Manchester United Graphics — Alex Pearson</title>
   <meta name="description" content="Project: post-match player stat graphics and matchday lineup cards inspired by Manchester United." />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=3" />
+  <link rel="preload" href="fonts/figtree-latin.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="styles.css?v=4" />
+  <script type="speculationrules">
+    {"prerender": [{"where": {"href_matches": "/*"}, "eagerness": "moderate"}]}
+  </script>
 </head>
 <body>
 
@@ -35,7 +36,7 @@
   <main class="wrap">
 
     <div class="card dark showcase-wide fit" style="--tint: var(--united);">
-      <picture><source srcset="Manchester%20united%20graphics/__Graphics%202026/Bruno%20Home%20Kit.avif" type="image/avif" /><img src="Manchester%20united%20graphics/__Graphics%202026/Bruno%20Home%20Kit.jpg" width="1200" height="675" alt="Bruno Fernandes post-match stat graphic" /></picture>
+      <picture><source srcset="Manchester%20united%20graphics/__Graphics%202026/Bruno%20Home%20Kit.avif" type="image/avif" /><img fetchpriority="high" src="Manchester%20united%20graphics/__Graphics%202026/Bruno%20Home%20Kit.jpg" width="1200" height="675" alt="Bruno Fernandes post-match stat graphic" /></picture>
     </div>
 
     <!-- OVERVIEW -->

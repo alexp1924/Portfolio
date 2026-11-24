@@ -5,10 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Football Analytics App — Alex Pearson</title>
   <meta name="description" content="Case study: a mobile app that helps casual football fans understand advanced match statistics." />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=3" />
+  <link rel="preload" href="fonts/figtree-latin.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="styles.css?v=4" />
+  <script type="speculationrules">
+    {"prerender": [{"where": {"href_matches": "/*"}, "eagerness": "moderate"}]}
+  </script>
 </head>
 <body>
 
@@ -35,7 +36,7 @@
   <main class="wrap">
 
     <div class="card dark showcase" style="--tint: var(--football);">
-      <picture><source srcset="Football%20Analytics/Screens/home.avif" type="image/avif" /><img src="Football%20Analytics/Screens/home.jpg" width="590" height="1278" alt="Home screen with live matches and expected goals (xG) with an information button" /></picture>
+      <picture><source srcset="Football%20Analytics/Screens/home.avif" type="image/avif" /><img fetchpriority="high" src="Football%20Analytics/Screens/home.jpg" width="590" height="1278" alt="Home screen with live matches and expected goals (xG) with an information button" /></picture>
       <picture><source srcset="Football%20Analytics/Screens/match-lineups.avif" type="image/avif" /><img src="Football%20Analytics/Screens/match-lineups.jpg" width="590" height="1278" alt="Match lineups with substitutions, goals and cards" /></picture>
       <picture><source srcset="Football%20Analytics/Screens/match-overview.avif" type="image/avif" /><img src="Football%20Analytics/Screens/match-overview.jpg" width="590" height="1278" alt="Match overview with player of the match and a match momentum chart" /></picture>
       <picture><source srcset="Football%20Analytics/Screens/match-shot-map.avif" type="image/avif" /><img src="Football%20Analytics/Screens/match-shot-map.jpg" width="590" height="1278" alt="Match statistics showing an interactive shot map" /></picture>

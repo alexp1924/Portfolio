@@ -5,10 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Cheers — Alex Pearson</title>
   <meta name="description" content="Case study: an iPhone app for rating drinks out of ten and sharing them with friends, designed and built by Alex Pearson." />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=3" />
+  <link rel="preload" href="fonts/figtree-latin.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="styles.css?v=4" />
+  <script type="speculationrules">
+    {"prerender": [{"where": {"href_matches": "/*"}, "eagerness": "moderate"}]}
+  </script>
 </head>
 <body>
 
@@ -35,7 +36,7 @@
   <main class="wrap">
 
     <div class="card dark showcase" style="--tint: var(--cheers);">
-      <picture><source srcset="Cheers/Screens/welcome-1.avif" type="image/avif" /><img src="Cheers/Screens/welcome-1.jpg" width="590" height="1278" alt="Welcome screen: friends' drinks with scores around the line Rate your drinks. Share them with friends." /></picture>
+      <picture><source srcset="Cheers/Screens/welcome-1.avif" type="image/avif" /><img fetchpriority="high" src="Cheers/Screens/welcome-1.jpg" width="590" height="1278" alt="Welcome screen: friends' drinks with scores around the line Rate your drinks. Share them with friends." /></picture>
       <picture><source srcset="Cheers/Screens/home.avif" type="image/avif" /><img src="Cheers/Screens/home.jpg" width="590" height="1278" alt="Home feed with a friend's strawberry spritz, rated 9.0" /></picture>
       <picture><source srcset="Cheers/Screens/rating.avif" type="image/avif" /><img src="Cheers/Screens/rating.jpg" width="590" height="1278" alt="Rating a drink: name, type and a rating slider out of 10" /></picture>
       <picture><source srcset="Cheers/Screens/profile.avif" type="image/avif" /><img src="Cheers/Screens/profile.jpg" width="590" height="1278" alt="Profile with a Top rated row of drink photos and the full list below" /></picture>
